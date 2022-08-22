@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%- title %></title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/style/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/style/all.css" />
+  </head>
+
+  <body>
+    <header class="sticky top-0 border-b border-b-black bg-soft-gray z-20">
+      <nav class="container flex items-center gap-x-6 lg:gap-x-0">
+        <!-- logo -->
+        <div class="flex-grow py-4 lg:border-r lg:border-r-black lg:py-8">
+          <h1
+            class="h-[18px] w-[85px] overflow-hidden whitespace-nowrap bg-[url('../images/logo.svg')] bg-cover bg-no-repeat indent-[101%] lg:h-10 lg:w-[190px]"
+          >
+            <a href="./index.html" class="block h-full">ART NFT</a>
+          </h1>
+        </div>
+        <!-- searchbar -->
+        <div class="lg:border-r lg:border-r-black">
+          <div
+            class="absolute right-1/2 top-0 z-30 flex w-full max-w-0 translate-x-1/2 items-center overflow-hidden bg-soft-gray py-4 text-sm leading-5 duration-500 md:static md:max-w-full md:translate-x-0 lg:px-12 lg:py-10 lg:text-base lg:leading-normal"
+            id="search-bar"
+          >
+            <i
+              class="fa-solid fa-angle-left mr-4 md:hidden"
+              onclick="toggleSearch()"
+            ></i>
+            <input
+              type="text"
+              placeholder="搜尋作品名稱、藝術家名稱"
+              class="mr-4 flex-grow bg-transparent leading-normal placeholder:text-[#808080] focus:outline-0 md:mr-6 md:text-base"
+            />
+            <i
+              class="fa-solid fa-magnifying-glass cursor-pointer text-lg duration-300 hover:text-crimson md:text-xl"
+            ></i>
+          </div>
+          <div>
+            <i
+              class="fa-solid fa-magnifying-glass text-lg md:hidden md:text-xl"
+              onclick="toggleSearch()"
+            ></i>
+          </div>
+        </div>
+        <!-- menu -->
+        <ul
+          class="absolute bottom-0 left-0 max-h-0 w-full translate-y-full overflow-hidden bg-white px-3 text-center transition-[max-height] duration-500 ease-linear lg:static lg:flex lg:max-h-full lg:w-auto lg:translate-y-0 lg:items-center lg:bg-transparent lg:px-0 lg:pb-0 lg:duration-[0s]"
+          id="menu"
+        >
+          <li
+            class="border-b border-b-black lg:border-b-0 lg:border-r lg:border-r-black"
+          >
+            <a
+              href="#"
+              class="block h-full py-6 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
+              >探索</a
+            >
+          </li>
+          <li
+            class="border-b border-b-black lg:border-b-0 lg:border-r lg:border-r-black"
+          >
+            <a
+              href="#"
+              class="block h-full py-6 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
+              >市值</a
+            >
+          </li>
+          <li class="mb-6 lg:mb-0">
+            <a
+              href="#"
+              class="hidden h-full py-6 duration-300 lg:block lg:py-10 lg:pl-12 lg:hover:text-crimson"
+              ><i class="fa-solid fa-wallet"></i
+            ></a>
+            <a
+              href="#"
+              class="block h-full py-6 text-lg font-bold leading-normal active:bg-crimson active:text-white active:ring-1 active:ring-black lg:hidden"
+              >連結錢包</a
+            >
+          </li>
+        </ul>
+        <!-- menu-control -->
+        <div class="relative py-4 lg:hidden lg:py-8" onclick="toggleMenu()">
+          <i
+            class="fa-solid fa-bars text-lg delay-200 lg:text-2xl"
+            id="open"
+          ></i>
+          <i
+            class="fa-solid fa-close invisible absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-lg delay-200 lg:text-2xl"
+            id="close"
+          ></i>
+        </div>
+      </nav>
+    </header>
+
+    <main class="<%- current === 'index' ? '' : 'pt-6' %> lg:pt-10">
+      <%- contents %>
+    </main>
+
+    <footer class="border-t-double">
+      <p class="py-6 text-center leading-normal">
+        © ART NFT. All Rights Reserved
+      </p>
+    </footer>
+    <div class="fixed bg-black opacity-0 duration-500 transition-opacity z-10" id="mask"></div>
+    <script src="./assets/js/vendors.js"></script>
+    <script src="./assets/js/all.js"></script>
+  </body>
+</html>

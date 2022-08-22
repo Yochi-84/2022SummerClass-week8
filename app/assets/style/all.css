@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-soft-gray leading-none;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply relative z-[1] inline-block py-2 px-12 font-squada text-lg uppercase leading-[19px] ring-1 ring-black duration-300 after:absolute after:right-0 after:bottom-0 after:z-[2] after:border-l-[16px] after:border-b-[16px] after:border-b-crimson after:border-l-transparent after:duration-300 after:content-[""] hover:bg-crimson hover:text-white hover:after:border-b-black;
+  }
+
+  .more {
+    @apply absolute inset-0 z-[1] flex items-center justify-center font-squada text-lg uppercase text-white before:absolute before:inset-0 before:-z-10 before:bg-black before:opacity-70 before:content-[''] after:absolute after:right-0 after:bottom-0 after:z-[2] after:border-l-[16px] after:border-b-[16px] after:border-b-crimson  after:border-l-transparent after:content-[""];
+  }
+
+  .border-t-double {
+    @apply relative mt-2 border-t border-black before:absolute before:-top-2.5 before:h-1 before:w-full before:bg-black;
+  }
+}
+
+@layer utilities {
+  .mode-vertical {
+    writing-mode: vertical-lr;
+  }
+
+  /* navbar */
+  .open {
+    @apply !max-h-screen;
+  }
+
+  /* searchBar */
+  .show {
+    @apply !max-w-full !px-3;
+  }
+
+  /* mask */
+  .show-mask {
+    @apply inset-0 !opacity-70;
+  }
+}
