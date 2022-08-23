@@ -21,8 +21,8 @@
     @apply absolute inset-0 z-[1] flex items-center justify-center font-squada text-lg uppercase text-white before:absolute before:inset-0 before:-z-10 before:bg-black before:opacity-70 before:content-[''] after:absolute after:right-0 after:bottom-0 after:z-[2] after:border-l-[16px] after:border-b-[16px] after:border-b-crimson  after:border-l-transparent after:content-[""];
   }
 
-  .border-t-double {
-    @apply relative mt-2 border-t border-black before:absolute before:-top-2.5 before:h-1 before:w-full before:bg-black;
+  .nav-item .active {
+    @apply relative border border-b-0 border-black text-black after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:bg-soft-gray after:content-[""] ;
   }
 }
 

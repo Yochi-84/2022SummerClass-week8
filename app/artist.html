@@ -1,0 +1,479 @@
+---
+title: ART NFT - Artist
+layout: ./app/layout.ejs
+engine: ejs
+current: artist
+---
+
+<!-- Introduce -->
+<section class="container">
+  <div class="flex flex-wrap gap-y-4 lg:-mx-3">
+    <div class="flex flex-wrap lg:w-3/4 lg:px-3">
+      <div class="lg:w-2/5">
+        <img
+          src="./assets/images/artist01.jpg"
+          alt="Michael"
+          class="h-full w-full object-cover object-center"
+        />
+      </div>
+      <div
+        class="border-l border-t border-r border-b border-black bg-white py-6 px-4 lg:w-3/5 lg:p-6"
+      >
+        <div class="flex items-center justify-between">
+          <h2
+            class="font-squada text-3xl leading-[34px] lg:text-4xl lg:leading-[50px]"
+          >
+            Michael
+          </h2>
+          <ul class="flex items-center gap-x-2">
+            <li>
+              <a href="#" class="duration-300 hover:text-crimson"
+                ><i class="fa-brands fa-discord"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="duration-300 hover:text-crimson"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="duration-300 hover:text-crimson"
+                ><i class="fa-solid fa-globe"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="duration-300 hover:text-crimson"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <small class="mt-2 font-squada leading-[17px] lg:mt-4"
+          >0x3ya666…88ef</small
+        >
+        <p class="mt-6 leading-normal lg:line-clamp-4">
+          Michael自小在山林長大，能夠與花草樹木大自然進行靈體溝通，創作題材常見大山、大水、花草與樹木，從日常生活出發，擁有個⼈獨樹⼀格的創作風格，作品觸及靈魂深處、探索未知宇宙，透過與大自然的溝通，探討著存在的本質。​
+        </p>
+      </div>
+    </div>
+    <div class="w-full lg:w-1/4 lg:px-3">
+      <ul class="border border-black bg-white">
+        <li
+          class="flex items-center justify-between border-b border-black py-4 px-6"
+        >
+          <span class="font-bold leading-loose">販售中</span>
+          <span class="font-squada text-3xl">168</span>
+        </li>
+        <li
+          class="flex items-center justify-between border-b border-black py-4 px-6"
+        >
+          <span class="font-bold leading-loose">地板價格</span>
+          <span class="font-squada text-3xl">0.6 ETH</span>
+        </li>
+        <li
+          class="flex items-center justify-between border-b border-black py-4 px-6"
+        >
+          <span class="font-bold leading-loose">7 日成交</span>
+          <span class="font-squada text-3xl">8.8 ETH</span>
+        </li>
+        <li class="flex items-center justify-between py-4 px-6">
+          <span class="font-bold leading-loose">30 日成交</span>
+          <span class="font-squada text-3xl">23.1 ETH</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-10 lg:mt-20">
+  <ul
+    class="nav nav-tabs mb-4 flex border-b border-black pl-0"
+    id="tabs-tab"
+    role="tablist"
+  >
+    <li class="nav-item flex-auto text-center lg:flex-none" role="presentation">
+      <a
+        href="#tabs-artworks"
+        class="active block py-4 font-squada text-3xl leading-[34px] text-[#808080] md:px-12 md:text-4xl md:leading-[50px]"
+        id="tabs-artworks-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tabs-artworks"
+        role="tab"
+        aria-controls="tabs-artworks"
+        aria-selected="true"
+        >Art Works<span
+          class="ml-4 hidden font-sans text-xl font-bold leading-[26px] md:inline"
+          >系列作品</span
+        ></a
+      >
+    </li>
+    <li class="nav-item flex-auto text-center lg:flex-none" role="presentation">
+      <a
+        href="#tabs-collection"
+        class="block py-4 font-squada text-3xl leading-[34px] text-[#808080] md:px-12 md:text-4xl md:leading-[50px]"
+        id="tabs-collection-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tabs-collection"
+        role="tab"
+        aria-controls="tabs-collection"
+        aria-selected="false"
+        >Collection<span
+          class="ml-4 hidden font-sans text-xl font-bold leading-[26px] md:inline"
+          >收藏品</span
+        ></a
+      >
+    </li>
+  </ul>
+  <div class="tab-content" id="tabs-tabContent">
+    <!-- Art Works -->
+    <div
+      class="active show tab-pane fade"
+      id="tabs-artworks"
+      role="tabpanel"
+      aria-labelledby="tabs-artworks-tab"
+    >
+      <div class="mt-6 md:mt-12">
+        <ul>
+          <li
+            class="relative border border-black bg-white before:absolute before:left-0 before:top-0 before:border-t-[24px] before:border-r-[24px] before:border-t-black before:border-r-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:border-t-[24px] after:border-l-[24px] after:border-l-transparent after:border-t-black after:content-['']"
+          >
+            <div class="px-4 py-9 md:px-[8.3333%] md:pt-12 md:pb-[22%]">
+              <div class="relative flex flex-wrap justify-center">
+                <div class="md:w-2/3 lg:w-4/5">
+                  <h3 class="text-2xl font-bold leading-[35px]">
+                    追求者送我的花
+                  </h3>
+                  <p class="mt-4 leading-normal">
+                    我又沒有特別喜歡花，為什麼不給我現金就好，擺在那也不知道要幹嘛，只好畫起來看有沒有人要買，阿不然如果真的喜歡我，把這些都買回去八。
+                  </p>
+                </div>
+                <div
+                  class="mt-6 w-full md:absolute md:-bottom-12 md:left-1/2 md:z-10 md:mt-0 md:-translate-x-1/2 md:translate-y-full"
+                >
+                  <ul class="md:-mx-1 md:flex">
+                    <li class="md:w-1/4 md:px-1">
+                      <div
+                        class="border-[10px] border-black bg-[url('../images/art32.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                      ></div>
+                    </li>
+                    <li class="hidden md:block md:w-1/4 md:px-1">
+                      <div
+                        class="border-[10px] border-black bg-[url('../images/art30.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                      ></div>
+                    </li>
+                    <li class="hidden md:block md:w-1/4 md:px-1">
+                      <div
+                        class="border-[10px] border-black bg-[url('../images/art14.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                      ></div>
+                    </li>
+                    <li class="hidden md:block md:w-1/4 md:px-1">
+                      <div
+                        class="border-[10px] border-black bg-[url('../images/art13.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                      ></div>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="mt-4 md:self-end after:clear-right after:block after:content-[''] md:mt-0 md:w-1/3 lg:w-1/5 self-center"
+                >
+                  <a href="#" class="btn md:float-right">more</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class="relative border border-black bg-white before:absolute before:left-0 before:top-0 before:border-t-[24px] before:border-r-[24px] before:border-t-black before:border-r-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:border-t-[24px] after:border-l-[24px] after:border-l-transparent after:border-t-black after:content-[''] mt-4 mb-12 md:mt-[88px] md:mb-[136px]"
+          >
+            <div class="px-4 py-9 md:px-[8.3333%] md:pt-12 md:pb-[22%]">
+              <div class="relative flex flex-wrap justify-center">
+                <div class="md:w-2/3 lg:w-4/5">
+                  <h3 class="text-2xl font-bold leading-[35px]">
+                    我家窗前的鳥
+                  </h3>
+                  <p class="mt-4 leading-normal">
+                    家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。
+                  </p>
+                </div>
+                <div
+                  class="mt-6 w-full md:absolute md:-bottom-12 md:left-1/2 md:z-10 md:mt-0 md:-translate-x-1/2 md:translate-y-full"
+                >
+                  <ul class="md:-mx-1 md:flex">
+                    <li class="md:w-1/4 md:px-1">
+                      <div
+                        class="border-[10px] border-black bg-[url('../images/art27.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                      ></div>
+                    </li>
+                    <li class="hidden md:block md:w-1/4 md:px-1">
+                      <div
+                        class="border-[10px] border-black bg-[url('../images/art20.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                      ></div>
+                    </li>
+                    <li class="hidden md:block md:w-1/4 md:px-1">
+                      <div
+                        class="border-[10px] border-black bg-[url('../images/art26.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                      ></div>
+                    </li>
+                    <li class="hidden md:block md:w-1/4 md:px-1">
+                      <div
+                        class="border-[10px] border-black bg-[url('../images/art22.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                      ></div>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="mt-4 md:self-end after:clear-right after:block after:content-[''] md:mt-0 md:w-1/3 lg:w-1/5 self-center"
+                >
+                  <a href="#" class="btn md:float-right">more</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Collection -->
+    <div
+      class="fade tab-pane"
+      id="tabs-collection"
+      role="tabpanel"
+      aria-labelledby="tabs-collection-tab"
+    >
+      <ul class="-mx-3 mt-6 grid md:mt-12" id="collection">
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3 xl:w-1/4">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art09.jpg" alt="區塊戀-他的私生活" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">
+                  我應該在家裡，不應該在這裡
+                </h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>300</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >區塊戀-他的私生活</a
+            >
+          </h3>
+        </li>
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3 xl:w-1/4">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art10.jpg" alt="夏娃的醜聞" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">
+                  唯一想擁有的人，唯一不可以擁有的
+                </h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>300</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >夏娃的醜聞</a
+            >
+          </h3>
+        </li>
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3 xl:w-1/4">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art02.jpg" alt="藍色啤酒海" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">
+                  藍色，憂鬱，酒，哎呀... 暈了
+                </h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>300</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >藍色啤酒海</a
+            >
+          </h3>
+        </li>
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3 xl:w-1/4">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art11.jpg" alt="沒有人愛我" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">
+                  弱小、可憐又無助，而且沒有人愛我
+                </h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>300</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >沒有人愛我</a
+            >
+          </h3>
+        </li>
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3 xl:w-1/4">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art12.jpg" alt="不哭不哭眼淚是珍珠" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">發家致富就在今天</h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>300</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >不哭不哭眼淚是珍珠</a
+            >
+          </h3>
+        </li>
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3 xl:w-1/4">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art03.jpg" alt="十分鐘就到" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">
+                  馬上就出門了，等我一下啊!!
+                </h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>300</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >十分鐘就到</a
+            >
+          </h3>
+        </li>
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3 xl:w-1/4">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art04.jpg" alt="我這樣有美嗎" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">這樣好像更美了(?</h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>300</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >我這樣有美嗎</a
+            >
+          </h3>
+        </li>
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3 xl:w-1/4">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art27.jpg" alt="我真的受傷了" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">我假裝沒看到</h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>300</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >我真的受傷了</a
+            >
+          </h3>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

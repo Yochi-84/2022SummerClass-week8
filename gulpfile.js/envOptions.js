@@ -42,6 +42,7 @@ let envOptions = {
   },
   vendors: {
     src: [
+      `${nodePath}/tw-elements/dist/js/index.min.js`,
       `${nodePath}/swiper/swiper-bundle.min.js`,
       `${nodePath}/masonry-layout/dist/masonry.pkgd.min.js`
     ],

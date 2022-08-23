@@ -14,21 +14,38 @@ let swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
   // spaceBetween: 30,
   loop: true,
-  grabCursor : true,
+  grabCursor: true,
   // loopFillGroupWithBlank: true,
   centeredSlides: true,
-  slideActiveClass : 'active',
+  slideActiveClass: 'active',
   navigation: {
     nextEl: "#swiper-next",
     prevEl: "#swiper-prev",
   },
-  pagination : {
+  pagination: {
     el: ".swiper-pagination",
     clickable: true,
   }
 });
 
-let grid = document.querySelector('#masonry');
-let masonry = new Masonry( grid, {
-  itemSelector: 'li',
-});
+
+let artwork = document.querySelector('#masonry');
+if (artwork) {
+  let artworkMasonry = new Masonry(artwork, {
+    itemSelector: 'li',
+  });
+};
+
+const tabCollection = document.querySelector('#tabs-collection-tab');
+tabCollection.addEventListener('show.bs.tab', (event) => {
+  let grid = document.querySelector('#collection');
+
+  let loading = setInterval(()=> {
+    if(grid.querySelector('li')) {
+      let masonry = new Masonry(grid, {
+        itemSelector: 'li',
+      });
+      clearInterval(loading);
+    }
+  },200);
+})

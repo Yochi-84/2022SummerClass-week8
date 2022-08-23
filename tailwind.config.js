@@ -1,7 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  content: ["./app/**/*.{html,ejs,js}"],
+  content: ["./app/**/*.{html,ejs,js}", "./node_modules/tw-elements/dist/js/**/*.js"],
   theme: {
     screens: {
       "md": "768px",
@@ -36,7 +36,8 @@ module.exports = {
     },
   },
   plugins: [
-    // require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
+    require('tw-elements/dist/plugin'),
+    require('@tailwindcss/line-clamp'),
+    // require('@tailwindcss/typography'),
   ],
 }
