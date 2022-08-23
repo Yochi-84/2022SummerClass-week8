@@ -9,11 +9,6 @@ function toggleSearch() {
   document.querySelector('#search-bar').classList.toggle('show');
 }
 
-Array.from(document.querySelectorAll('#masonry li')).forEach( ele => {
-  let h = Array.from(ele.children).reduce((a,b) => a.offsetHeight + b.offsetHeight);
-  console.log(h)
-  ele.style.gridRowStart = `span ${Math.ceil(h / 3)}`;
-});
 
 let swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
@@ -31,4 +26,9 @@ let swiper = new Swiper(".mySwiper", {
     el: ".swiper-pagination",
     clickable: true,
   }
+});
+
+let grid = document.querySelector('#masonry');
+let masonry = new Masonry( grid, {
+  itemSelector: 'li',
 });

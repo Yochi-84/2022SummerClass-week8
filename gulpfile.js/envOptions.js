@@ -43,6 +43,7 @@ let envOptions = {
   vendors: {
     src: [
       `${nodePath}/swiper/swiper-bundle.min.js`,
+      `${nodePath}/masonry-layout/dist/masonry.pkgd.min.js`
     ],
     concat: 'vendors.js',
     path: `${distPath}/assets/js`,
