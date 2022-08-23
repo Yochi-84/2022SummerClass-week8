@@ -27,7 +27,7 @@ module.exports = {
       fontFamily: {
         'sans': ['Noto Sans TC', ...defaultTheme.fontFamily.sans],
         'squada': ['Squada One', ...defaultTheme.fontFamily.sans],
-        'paytone':['Paytone One', ...defaultTheme.fontFamily.sans] 
+        'paytone':['Paytone One', ...defaultTheme.fontFamily.sans]
       },
       colors: {
         'crimson': '#E6553B',

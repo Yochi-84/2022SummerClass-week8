@@ -35,7 +35,6 @@ let envOptions = {
   },
   javascript: {
     src: [
-      `${nodePath}/swiper/swiper-bundle.min.js`,
       `${srcPath}/assets/js/**/*.js`
     ],
     concat: 'all.js',
@@ -43,7 +42,7 @@ let envOptions = {
   },
   vendors: {
     src: [
-      `${nodePath}/jquery/dist/**/jquery.min.js`,
+      `${nodePath}/swiper/swiper-bundle.min.js`,
     ],
     concat: 'vendors.js',
     path: `${distPath}/assets/js`,
