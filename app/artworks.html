@@ -1,0 +1,678 @@
+---
+title: ART NFT - ArtWorks
+layout: ./app/layout.ejs
+engine: ejs
+current: artworks
+---
+
+<section class="container">
+  <div class="flex lg:-mx-3">
+    <!-- TODO: 收合 -->
+    <!-- sidebar -->
+    <div
+      class="fixed inset-0 z-50 hidden bg-white lg:static lg:z-0 lg:block lg:w-1/4 lg:bg-transparent lg:px-3"
+    >
+      <div class="bg-white lg:border lg:border-black">
+        <div class="relative border-b border-b-black py-4 lg:hidden">
+          <h3 class="text-center text-xl leading-[29px]">篩選條件</h3>
+          <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xl"
+            ><i class="fa-solid fa-x"></i
+          ></span>
+        </div>
+        <div class="h-[calc(100vh-114px)] overflow-auto lg:h-auto">
+          <div class="bg-white px-3 md:px-4">
+            <div class="border-b border-b-gray-dark">
+              <h2 class="mb-0" id="net">
+                <label
+                  for="netButton"
+                  class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white pt-4 pb-2 text-left text-base font-bold leading-normal transition"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseNet"
+                  aria-expanded="true"
+                  aria-controls="collapseNet"
+                >
+                  網路<input
+                    type="checkbox"
+                    id="netButton"
+                    class="peer hidden" /><i
+                    class="fa-solid fa-angle-up duration-300 peer-checked:rotate-180"
+                  ></i
+                ></label>
+              </h2>
+              <div id="collapseNet" class="collapse show" aria-labelledby="net">
+                <ul class="pt-2 pb-6">
+                  <li class="flex items-center justify-between">
+                    <label for="ethereum">乙太坊</label>
+                    <input
+                      type="checkbox"
+                      name="ethereum"
+                      id="ethereum"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="bnb">BNB 智能鏈</label>
+                    <input
+                      type="checkbox"
+                      name="bnb"
+                      id="bnb"
+                      class="accent-black"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white px-3 md:px-4">
+            <div class="border-b border-b-gray-dark">
+              <h2 class="mb-0" id="status">
+                <label
+                  for="statusButton"
+                  class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white pt-4 pb-2 text-left text-base font-bold leading-normal transition"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseStatus"
+                  aria-expanded="true"
+                  aria-controls="collapseStatus"
+                >
+                  狀態<input
+                    type="checkbox"
+                    id="statusButton"
+                    class="peer hidden" /><i
+                    class="fa-solid fa-angle-up duration-300 peer-checked:rotate-180"
+                  ></i
+                ></label>
+              </h2>
+              <div
+                id="collapseStatus"
+                class="collapse show"
+                aria-labelledby="status"
+              >
+                <ul class="pt-2 pb-6">
+                  <li class="flex items-center justify-between">
+                    <label for="onlyshow">僅展示</label>
+                    <input
+                      type="checkbox"
+                      name="onlyshow"
+                      id="onlyshow"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="auction">拍賣中</label>
+                    <input
+                      type="checkbox"
+                      name="auction"
+                      id="auction"
+                      class="accent-black"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white px-3 md:px-4">
+            <div class="border-b border-b-gray-dark">
+              <h2 class="mb-0" id="price">
+                <label
+                  for="priceButton"
+                  class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white pt-4 pb-2 text-left text-base font-bold leading-normal transition"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsePrice"
+                  aria-expanded="true"
+                  aria-controls="collapsePrice"
+                >
+                  價格<input
+                    type="checkbox"
+                    id="priceButton"
+                    class="peer hidden" /><i
+                    class="fa-solid fa-angle-up duration-300 peer-checked:rotate-180"
+                  ></i
+                ></label>
+              </h2>
+              <div
+                id="collapsePrice"
+                class="collapse show"
+                aria-labelledby="price"
+              >
+                <div class="flex gap-x-2 pt-2 pb-6">
+                  <select
+                    name="kind"
+                    id="kind"
+                    class="border border-black leading-normal focus:outline-none"
+                  >
+                    <option value="ETH">ETH</option>
+                    <option value="BTC">BTC</option>
+                    <option value="SIGT">SIGT</option>
+                    <option value="XMR">XMR</option>
+                  </select>
+                  <input
+                    type="text"
+                    class="w-16 border border-black leading-normal focus:outline-none lg:w-14 xl:w-16"
+                  />
+                  <span class="self-center">-</span>
+                  <input
+                    type="text"
+                    class="w-16 border border-black leading-normal focus:outline-none lg:w-14 xl:w-16"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white px-3 md:px-4">
+            <div class="pb-10 lg:pb-6">
+              <h2 class="py-6 font-bold leading-normal text-gray-dark">屬性</h2>
+              <h2 class="mb-0" id="propertyKind">
+                <label
+                  for="propertyKindButton"
+                  class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white pb-2 text-left text-base font-bold leading-normal transition"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsePropertyKind"
+                  aria-expanded="false"
+                  aria-controls="collapsePropertyKind"
+                >
+                  品種<input
+                    type="checkbox"
+                    id="propertyKindButton"
+                    class="peer hidden" /><i
+                    class="fa-solid fa-angle-down duration-300 peer-checked:rotate-180"
+                  ></i
+                ></label>
+              </h2>
+              <div
+                id="collapsePropertyKind"
+                class="collapse"
+                aria-labelledby="propertyKind"
+              >
+                <ul class="pt-2 pb-6">
+                  <li class="flex items-center justify-between">
+                    <label for="kind1">八哥</label>
+                    <input
+                      type="checkbox"
+                      name="kind1"
+                      id="kind1"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="kind2">虎皮鸚鵡</label>
+                    <input
+                      type="checkbox"
+                      name="kind2"
+                      id="kind2"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="kind3">太平鳥</label>
+                    <input
+                      type="checkbox"
+                      name="kind3"
+                      id="kind3"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="kind4">畫眉鳥</label>
+                    <input
+                      type="checkbox"
+                      name="kind4"
+                      id="kind4"
+                      class="accent-black"
+                    />
+                  </li>
+                </ul>
+              </div>
+              <h2 class="mb-0" id="propertyNumber">
+                <label
+                  for="propertyNumberButton"
+                  class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white pb-2 text-left text-base font-bold leading-normal transition"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsePropertyNumber"
+                  aria-expanded="false"
+                  aria-controls="collapsePropertyNumber"
+                >
+                  數量<input
+                    type="checkbox"
+                    id="propertyNumberButton"
+                    class="peer hidden" /><i
+                    class="fa-solid fa-angle-down duration-300 peer-checked:rotate-180"
+                  ></i
+                ></label>
+              </h2>
+              <div
+                id="collapsePropertyNumber"
+                class="collapse"
+                aria-labelledby="propertyNumber"
+              >
+                <ul class="pt-2 pb-6">
+                  <li class="flex items-center justify-between">
+                    <label for="number1">1 ~ 3</label>
+                    <input
+                      type="checkbox"
+                      name="number1"
+                      id="number1"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="number2">4 ~ 8</label>
+                    <input
+                      type="checkbox"
+                      name="number2"
+                      id="number2"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="number3">9 ~ 12</label>
+                    <input
+                      type="checkbox"
+                      name="number3"
+                      id="number3"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="number4">大於 12</label>
+                    <input
+                      type="checkbox"
+                      name="number4"
+                      id="number4"
+                      class="accent-black"
+                    />
+                  </li>
+                </ul>
+              </div>
+              <h2 class="mb-0" id="propertyPlant">
+                <label
+                  for="propertyPlantButton"
+                  class="tkindransition relative flex w-full cursor-pointer items-center justify-between border-0 bg-white pb-2 text-left text-base font-bold leading-normal"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsePropertyPlant"
+                  aria-expanded="false"
+                  aria-controls="collapsePropertyPlant"
+                >
+                  是否有花草<input
+                    type="checkbox"
+                    id="propertyPlantButton"
+                    class="peer hidden" /><i
+                    class="fa-solid fa-angle-down duration-300 peer-checked:rotate-180"
+                  ></i
+                ></label>
+              </h2>
+              <div
+                id="collapsePropertyPlant"
+                class="collapse"
+                aria-labelledby="propertyPlant"
+              >
+                <ul class="pt-2 pb-6">
+                  <li class="flex items-center justify-between">
+                    <label for="plantTrue">有</label>
+                    <input
+                      type="radio"
+                      name="plant"
+                      id="plantTrue"
+                      class="accent-black"
+                      checked
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="plantFalse">無</label>
+                    <input
+                      type="radio"
+                      name="plant"
+                      id="plantFalse"
+                      class="accent-black"
+                    />
+                  </li>
+                </ul>
+              </div>
+              <h2 class="mb-0" id="propertyColor">
+                <label
+                  for="propertyColorButton"
+                  class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white pb-2 text-left text-base font-bold leading-normal transition"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsePropertyColor"
+                  aria-expanded="false"
+                  aria-controls="collapsePropertyColor"
+                >
+                  鳥的顏色<input
+                    type="checkbox"
+                    id="propertyColorButton"
+                    class="peer hidden" /><i
+                    class="fa-solid fa-angle-down duration-300 peer-checked:rotate-180"
+                  ></i
+                ></label>
+              </h2>
+              <div
+                id="collapsePropertyColor"
+                class="collapse"
+                aria-labelledby="propertyColor"
+              >
+                <ul class="pt-2 pb-6">
+                  <li class="flex items-center justify-between">
+                    <label for="color1">藍色</label>
+                    <input
+                      type="checkbox"
+                      name="color1"
+                      id="color1"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="color2">綠色</label>
+                    <input
+                      type="checkbox"
+                      name="color2"
+                      id="color2"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="color3">紅色</label>
+                    <input
+                      type="checkbox"
+                      name="color3"
+                      id="color3"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="color4">黑色</label>
+                    <input
+                      type="checkbox"
+                      name="color4"
+                      id="color4"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="color5">白色</label>
+                    <input
+                      type="checkbox"
+                      name="color5"
+                      id="color5"
+                      class="accent-black"
+                    />
+                  </li>
+                  <li class="mt-2 flex items-center justify-between">
+                    <label for="color6">其他</label>
+                    <input
+                      type="checkbox"
+                      name="color6"
+                      id="color6"
+                      class="accent-black"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a
+          href="#"
+          class="fixed bottom-0 block w-full border border-black bg-crimson py-3 text-center text-lg leading-[26px] text-white active:bg-black lg:hidden"
+          >確認</a
+        >
+      </div>
+    </div>
+    <!-- main -->
+    <div class="lg:w-3/4 lg:px-3">
+      <!-- artist -->
+      <div class="flex w-full items-center gap-x-4 lg:px-3">
+        <img
+          src="./assets/images/artist01.jpg"
+          alt="Michael"
+          class="h-8 w-8 rounded-full"
+        />
+        <h3 class="font-squada leading-[17px]">Michael</h3>
+      </div>
+      <!-- intro -->
+      <div class="flex flex-wrap items-end gap-y-4 lg:-mx-3">
+        <div class="mt-1 lg:w-[55.5555%] lg:px-3">
+          <h2 class="text-3xl font-bold leading-[46px]">我家外面的鳥</h2>
+          <p class="mt-2 leading-normal">
+            家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。
+          </p>
+        </div>
+        <div class="w-full lg:w-[44.4445%] lg:px-3">
+          <ul class="flex border border-black bg-white text-center">
+            <li
+              class="relative w-1/4 border-r border-r-black py-4 after:absolute after:right-[-2px] after:top-[22.5px] after:h-[45px] after:w-[4px] after:bg-white after:content-['']"
+            >
+              <h5 class="text-sm leading-5 lg:text-base lg:leading-6">項目</h5>
+              <p class="mt-1 font-squada text-xl leading-8 lg:mt-2 lg:text-2xl">
+                6.4K
+              </p>
+            </li>
+            <li
+              class="relative w-1/4 border-r border-r-black py-4 after:absolute after:right-[-2px] after:top-[22.5px] after:h-[45px] after:w-[4px] after:bg-white after:content-['']"
+            >
+              <h5 class="text-sm leading-5 lg:text-base lg:leading-6">
+                擁有者
+              </h5>
+              <p class="mt-1 font-squada text-xl leading-8 lg:mt-2 lg:text-2xl">
+                2.5K
+              </p>
+            </li>
+            <li
+              class="relative w-1/4 border-r border-r-black py-4 after:absolute after:right-[-2px] after:top-[22.5px] after:h-[45px] after:w-[4px] after:bg-white after:content-['']"
+            >
+              <h5 class="text-sm leading-5 lg:text-base lg:leading-6">底價</h5>
+              <p
+                class="mt-1 flex items-center justify-center font-squada text-xl leading-8 lg:mt-2 lg:text-2xl"
+              >
+                <i class="fa-brands fa-ethereum mr-2 text-base"></i>1.38 k
+              </p>
+            </li>
+            <li class="w-1/4 py-4">
+              <h5 class="text-sm leading-5 lg:text-base lg:leading-6">總額</h5>
+              <p class="mt-1 font-squada text-xl leading-8 lg:mt-2 lg:text-2xl">
+                2.8K
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="relative mt-10 after:clear-right after:block after:content-['']"
+      >
+        <div
+          class="absolute right-[37px] bottom-1/2 -translate-y-0.5 border-b-[6px] border-r-[6px] border-l-[6px] border-b-black border-r-transparent border-l-transparent lg:right-[23px]"
+        ></div>
+        <div
+          class="absolute right-[37px] top-1/2 translate-y-0.5 border-t-[6px] border-r-[6px] border-l-[6px] border-t-black border-r-transparent border-l-transparent lg:right-[23px]"
+        ></div>
+        <select
+          name="sort"
+          id="sort"
+          class="float-right appearance-none border border-black py-2 pl-[38px] pr-[54px] leading-normal lg:pr-10 lg:pl-6 focus:outline-none"
+        >
+          <option value="newest">最新上架</option>
+          <option value="newest">價格最高</option>
+        </select>
+      </div>
+      <ul class="-mx-3 mt-6 grid md:mt-10" id="artworkMasonry">
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art20.jpg" alt="這兩隻也太像企鵝了吧" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">
+                  沒看過站樹上的企鵝？
+                </h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>320</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >這兩隻也太像企鵝了吧</a
+            >
+          </h3>
+        </li>
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art21.jpg" alt="兩情相悅" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">
+                  3/14 情人節外面剛好有兩隻鳥，也在過情人節
+                </h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>280</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >兩情相悅</a
+            >
+          </h3>
+        </li>
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art22.jpg" alt="群聚的小鳥們" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">
+                  陽性小圈圈，我又被排擠...
+                </h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>200</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >群聚的小鳥們</a
+            >
+          </h3>
+        </li>
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art23.jpg" alt="與你分享的快樂勝過獨自擁有" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">
+                  至今我仍深深感動~~
+                </h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>300</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >與你分享的快樂勝過獨自擁有</a
+            >
+          </h3>
+        </li>
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art24.jpg" alt="會唱metal的鳥" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">嘰~~~~~~~</h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>150</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >會唱metal的鳥</a
+            >
+          </h3>
+        </li>
+        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3">
+          <div
+            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
+          >
+            <img src="./assets/images/art25.jpg" alt="一大一小兩個恰恰好" />
+            <div
+              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+            >
+              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <h4 class="leading-normal text-white">
+                  清蒸紅燒可以吃飽飽
+                </h4>
+                <span
+                  class="mt-2 inline-block font-squada leading-[17px] text-white"
+                  ><i class="fa-brands fa-ethereum mr-2"></i>200</span
+                >
+                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
+          >
+            <a
+              href="#"
+              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
+              >一大一小兩個恰恰好</a
+            >
+          </h3>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -31,7 +31,10 @@ module.exports = {
       },
       colors: {
         'crimson': '#E6553B',
-        'soft-gray': '#F0F0F0'
+        'gray': {
+          DEFAULT: '#F0F0F0',
+          'dark': '#808080'
+        }
       }
     },
   },

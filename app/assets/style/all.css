@@ -8,7 +8,7 @@
 
 @layer base {
   body {
-    @apply bg-soft-gray leading-none;
+    @apply bg-gray leading-none;
   }
 }
 
@@ -22,7 +22,7 @@
   }
 
   .nav-item .active {
-    @apply relative border border-b-0 border-black text-black after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:bg-soft-gray after:content-[""] ;
+    @apply relative border border-b-0 border-black text-black after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:bg-gray after:content-[""] ;
   }
 }
 
@@ -32,12 +32,12 @@
   }
 
   /* navbar */
-  .open {
+  .nav-open {
     @apply !max-h-screen;
   }
 
   /* searchBar */
-  .show {
+  .search-show {
     @apply !max-w-full !px-3;
   }
 

@@ -2,11 +2,11 @@ function toggleMenu() {
   document.querySelector('#open').classList.toggle('invisible');
   document.querySelector('#close').classList.toggle('invisible');
   document.querySelector('#mask').classList.toggle('show-mask');
-  document.querySelector('#menu').classList.toggle('open');
+  document.querySelector('#menu').classList.toggle('nav-open');
 }
 
 function toggleSearch() {
-  document.querySelector('#search-bar').classList.toggle('show');
+  document.querySelector('#search-bar').classList.toggle('search-show');
 }
 
 
@@ -29,23 +29,32 @@ let swiper = new Swiper(".mySwiper", {
 });
 
 
-let artwork = document.querySelector('#masonry');
-if (artwork) {
-  let artworkMasonry = new Masonry(artwork, {
+let indexMasonry = document.querySelector('#indexMasonry');
+if (indexMasonry) {
+  let iMasonry = new Masonry(indexMasonry, {
     itemSelector: 'li',
   });
 };
 
 const tabCollection = document.querySelector('#tabs-collection-tab');
-tabCollection.addEventListener('show.bs.tab', (event) => {
-  let grid = document.querySelector('#collection');
+if (tabCollection) {
+  tabCollection.addEventListener('show.bs.tab', (event) => {
+    let collectionMasonry = document.querySelector('#collectionMasonry');
 
-  let loading = setInterval(()=> {
-    if(grid.querySelector('li')) {
-      let masonry = new Masonry(grid, {
-        itemSelector: 'li',
-      });
-      clearInterval(loading);
-    }
-  },200);
-})
+    let loading = setInterval(() => {
+      if (collectionMasonry.querySelector('li')) {
+        let cMasonry = new Masonry(collectionMasonry, {
+          itemSelector: 'li',
+        });
+        clearInterval(loading);
+      }
+    }, 200);
+  });
+};
+
+let artworkMasonry = document.querySelector('#artworkMasonry');
+if (artworkMasonry) {
+  let aMasonry = new Masonry(artworkMasonry, {
+    itemSelector: 'li',
+  });
+};
