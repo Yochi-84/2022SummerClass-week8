@@ -58,7 +58,7 @@ current: index
       >
         海洋波度
       </h3>
-      <p class="mt-6 leading-normal mb-4">
+      <p class="mt-6 mb-4 leading-normal">
         海洋的奧秘向我們揭示了深不可測的一面，它的深度——反映了我們的恐懼、同時也吸引著我們。
       </p>
       <a href="./artworks.html" class="btn mt-6 self-end md:mt-auto">more</a>
@@ -81,7 +81,7 @@ current: index
       >
         我家窗前的鳥
       </h3>
-      <p class="mt-6 leading-normal mb-4">
+      <p class="mt-6 mb-4 leading-normal">
         家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。
       </p>
       <a href="./artworks.html" class="btn mt-6 self-end md:mt-auto">more</a>
@@ -98,7 +98,9 @@ current: index
       class="ml-4 hidden font-sans text-xl font-bold leading-[29px] lg:inline"
       >市價排行榜</span
     >
-    <a href="./ranking.html" class="btn absolute right-0 bottom-0 ring-0">more</a>
+    <a href="./ranking.html" class="btn absolute right-0 bottom-0 ring-0"
+      >more</a
+    >
   </h2>
   <ul
     class="mt-6 block w-full space-y-6 md:-mx-3 md:mt-12 md:flex md:w-auto md:flex-wrap md:gap-y-8 md:space-y-0 lg:space-y-0"
@@ -331,28 +333,87 @@ current: index
       class="ml-4 hidden font-sans text-xl font-bold leading-[29px] lg:inline"
       >熱門藝術家</span
     >
-    <a href="./artist.html" class="btn absolute right-0 bottom-0 ring-0">more</a>
+    <a href="./artist.html" class="btn absolute right-0 bottom-0 ring-0"
+      >more</a
+    >
   </h2>
   <!-- TODO: carousel -->
-  <div class="swiper indexSwiper mt-6 md:mt-12">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide h-[400px]">
-        <img src="./assets/images/artist01.jpg" alt="Michael" class="w-full h-full object-cover" />
+  <div class="swiper indexSwiper mt-6 pb-[34px] md:mt-12 lg:pb-[58px]">
+    <div class="swiper-wrapper lg:-mx-3">
+      <div class="swiper-slide lg:px-3">
+        <div class="relative h-full">
+          <img
+            src="./assets/images/artist01.jpg"
+            alt="Michael"
+            class="h-full w-full object-cover"
+          />
+          <h3
+            class="font-squada text-3xl leading-[34px] text-white lg:absolute lg:top-6 lg:left-6 lg:text-5xl lg:leading-[85px]"
+          >
+            Michael
+          </h3>
+          <p
+            class="z-10 p-6 leading-normal before:absolute before:inset-0 before:-z-10 before:bg-white before:opacity-[0.85] before:content-[''] lg:absolute lg:left-6 lg:bottom-6 lg:max-w-[calc(50%-12px)]"
+          >
+            ​喜愛大自然，創作題材常見大山、大水、花草與樹木。
+          </p>
+          <a
+            href="./artist.html"
+            class="btn bg-white lg:absolute lg:right-6 lg:bottom-6"
+            >more</a
+          >
+        </div>
       </div>
-      <div class="swiper-slide h-[400px]">
-        <img
-          src="./assets/images/artist02.jpg"
-          alt="Antony Wu"
-          class="w-full h-full object-cover"
-        />
+      <div class="swiper-slide lg:px-3">
+        <div class="relative h-full">
+          <img
+            src="./assets/images/artist02.jpg"
+            alt="Antony Wu"
+            class="h-full w-full object-cover"
+          />
+          <h3
+            class="font-squada text-3xl leading-[34px] text-white lg:absolute lg:top-6 lg:left-6 lg:text-5xl lg:leading-[85px]"
+          >
+            Antony<br class="hidden lg:block" />Wu
+          </h3>
+          <p
+            class="z-10 p-6 leading-normal before:absolute before:inset-0 before:-z-10 before:bg-white before:opacity-[0.85] before:content-[''] lg:absolute lg:left-6 lg:bottom-6 lg:max-w-[calc(50%-12px)]"
+          >
+            ​喜愛大自然，創作題材常見大山、大水、花草與樹木。
+          </p>
+          <a
+            href="./artist.html"
+            class="btn bg-white lg:absolute lg:right-6 lg:bottom-6"
+            >more</a
+          >
+        </div>
       </div>
-      <div class="swiper-slide h-[400px]">
-        <img src="./assets/images/artist03.jpg" alt="Wei JJ" class="w-full h-full object-cover" />
+      <div class="swiper-slide lg:px-3">
+        <div class="relative h-full">
+          <img
+            src="./assets/images/artist03.jpg"
+            alt="Wei JJ"
+            class="h-full w-full object-cover"
+          />
+          <h3
+            class="font-squada text-3xl leading-[34px] text-white lg:absolute lg:top-6 lg:left-6 lg:text-5xl lg:leading-[85px]"
+          >
+            Wei<br class="hidden lg:block" />JJ
+          </h3>
+          <p
+            class="z-10 p-6 leading-normal before:absolute before:inset-0 before:-z-10 before:bg-white before:opacity-[0.85] before:content-[''] lg:absolute lg:left-6 lg:bottom-6 lg:max-w-[calc(50%-12px)]"
+          >
+            ​喜愛大自然，創作題材常見大山、大水、花草與樹木。
+          </p>
+          <a
+            href="./artist.html"
+            class="btn bg-white lg:absolute lg:right-6 lg:bottom-6"
+            >more</a
+          >
+        </div>
       </div>
     </div>
-    <div id="swiper-pagination"></div>
-    <div class="swiper-button-prev" id="swiper-prev"></div>
-    <div class="swiper-button-next" id="swiper-next"></div>
+    <div class="swiper-pagination"></div>
   </div>
 </section>
 
@@ -365,7 +426,9 @@ current: index
       class="ml-4 hidden font-sans text-xl font-bold leading-[29px] lg:inline"
       >最新藝術品</span
     >
-    <a href="./artworks.html" class="btn absolute right-0 bottom-0 ring-0">more</a>
+    <a href="./artworks.html" class="btn absolute right-0 bottom-0 ring-0"
+      >more</a
+    >
   </h2>
 
   <ul class="-mx-3 mt-6 grid md:mt-12" id="indexMasonry">
@@ -386,7 +449,9 @@ current: index
                 class="mt-2 inline-block font-squada leading-[17px] text-white"
                 ><i class="fa-brands fa-ethereum mr-2"></i>300</span
               >
-              <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+              <a href="./introduce.html" class="btn mt-auto self-end bg-white"
+                >more</a
+              >
             </div>
           </div>
         </div>
@@ -418,7 +483,9 @@ current: index
                 class="mt-2 inline-block font-squada leading-[17px] text-white"
                 ><i class="fa-brands fa-ethereum mr-2"></i>300</span
               >
-              <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+              <a href="./introduce.html" class="btn mt-auto self-end bg-white"
+                >more</a
+              >
             </div>
           </div>
         </div>
@@ -450,7 +517,9 @@ current: index
                 class="mt-2 inline-block font-squada leading-[17px] text-white"
                 ><i class="fa-brands fa-ethereum mr-2"></i>300</span
               >
-              <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+              <a href="./introduce.html" class="btn mt-auto self-end bg-white"
+                >more</a
+              >
             </div>
           </div>
         </div>
@@ -482,7 +551,9 @@ current: index
                 class="mt-2 inline-block font-squada leading-[17px] text-white"
                 ><i class="fa-brands fa-ethereum mr-2"></i>300</span
               >
-              <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+              <a href="./introduce.html" class="btn mt-auto self-end bg-white"
+                >more</a
+              >
             </div>
           </div>
         </div>
@@ -512,7 +583,9 @@ current: index
                 class="mt-2 inline-block font-squada leading-[17px] text-white"
                 ><i class="fa-brands fa-ethereum mr-2"></i>300</span
               >
-              <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+              <a href="./introduce.html" class="btn mt-auto self-end bg-white"
+                >more</a
+              >
             </div>
           </div>
         </div>
@@ -544,7 +617,9 @@ current: index
                 class="mt-2 inline-block font-squada leading-[17px] text-white"
                 ><i class="fa-brands fa-ethereum mr-2"></i>300</span
               >
-              <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+              <a href="./introduce.html" class="btn mt-auto self-end bg-white"
+                >more</a
+              >
             </div>
           </div>
         </div>
@@ -574,7 +649,9 @@ current: index
                 class="mt-2 inline-block font-squada leading-[17px] text-white"
                 ><i class="fa-brands fa-ethereum mr-2"></i>300</span
               >
-              <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+              <a href="./introduce.html" class="btn mt-auto self-end bg-white"
+                >more</a
+              >
             </div>
           </div>
         </div>
@@ -604,7 +681,9 @@ current: index
                 class="mt-2 inline-block font-squada leading-[17px] text-white"
                 ><i class="fa-brands fa-ethereum mr-2"></i>300</span
               >
-              <a href="./artworks.html" class="btn mt-auto self-end bg-white">more</a>
+              <a href="./artworks.html" class="btn mt-auto self-end bg-white"
+                >more</a
+              >
             </div>
           </div>
         </div>

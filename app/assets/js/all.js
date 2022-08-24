@@ -61,25 +61,19 @@ if (document.querySelector('#filterSubmit')) {
 }
 
 let indexSwiper = new Swiper(".indexSwiper", {
-  slidesPerView: 3,
-  // spaceBetween: 30,
-  // loop: true,
+  speed: 800,
+  loop: true,
   grabCursor: true,
-  // centeredSlides: true,
+  centeredSlides: true,
   breakpoints: {
     320: {
       slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 3,
+      loopedSlides: 3
     },
     1026: {
-      slidesPerView: 4,
+      slidesPerView: 3,
+      loopedSlides: 5
     }
-  },
-  navigation: {
-    nextEl: "#swiper-next",
-    prevEl: "#swiper-prev",
   },
   pagination: {
     el: ".swiper-pagination",
