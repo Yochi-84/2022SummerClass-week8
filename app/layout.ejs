@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,12 +16,12 @@
       integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./assets/style/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/style/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/style/all.css" />
   </head>
 
   <body>
-    <header class="sticky top-0 border-b border-b-black bg-gray z-20">
+    <header class="fixed w-full top-0 z-30 border-b border-b-black bg-gray">
       <nav class="container flex items-center gap-x-6 lg:gap-x-0">
         <!-- logo -->
         <div class="flex-grow py-4 lg:border-r lg:border-r-black lg:py-8">
@@ -47,7 +47,8 @@
               class="mr-4 flex-grow bg-transparent leading-normal placeholder:text-[#808080] focus:outline-0 md:mr-6 md:text-base"
             />
             <i
-              class="fa-solid fa-magnifying-glass cursor-pointer text-lg duration-300 hover:text-crimson md:text-xl" onclick="location.href='artist.html'"
+              class="fa-solid fa-magnifying-glass cursor-pointer text-lg duration-300 hover:text-crimson md:text-xl"
+              onclick="location.href='artist.html'"
             ></i>
           </div>
           <div>
@@ -60,13 +61,13 @@
         <!-- menu -->
         <ul
           class="absolute bottom-0 left-0 max-h-0 w-full translate-y-full overflow-hidden bg-white px-3 text-center transition-[max-height] duration-500 ease-linear lg:static lg:flex lg:max-h-full lg:w-auto lg:translate-y-0 lg:items-center lg:bg-transparent lg:px-0 lg:pb-0 lg:duration-[0s]"
-          id="menu"
+          id="menu" data-menu-status="close"
         >
           <li
             class="border-b border-b-black lg:border-b-0 lg:border-r lg:border-r-black"
           >
             <a
-              href="#"
+              href="./explore.html"
               class="block h-full py-6 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
               >探索</a
             >
@@ -75,19 +76,19 @@
             class="border-b border-b-black lg:border-b-0 lg:border-r lg:border-r-black"
           >
             <a
-              href="#"
+              href="./ranking"
               class="block h-full py-6 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
               >市值</a
             >
           </li>
           <li class="mb-6 lg:mb-0">
             <a
-              href="#"
+              href="javascript:toggleWallet();"
               class="hidden h-full py-6 duration-300 lg:block lg:py-10 lg:pl-12 lg:hover:text-crimson"
               ><i class="fa-solid fa-wallet"></i
             ></a>
             <a
-              href="#"
+              href="javascript:toggleWallet();"
               class="block h-full py-6 text-lg font-bold leading-normal active:bg-crimson active:text-white active:ring-1 active:ring-black lg:hidden"
               >連結錢包</a
             >
@@ -107,17 +108,89 @@
       </nav>
     </header>
 
-    <main class="<%- current === 'index' ? '' : 'pt-6' %> lg:pt-10">
+    <main class="<%- current === 'index' ? 'pt-14' : 'pt-20' %>  lg:pt-24">
       <%- contents %>
     </main>
 
-    <footer class="relative mt-2 border-t-4 border-black before:absolute before:-top-2.5 before:h-px before:w-full before:bg-black">
+    <footer
+      class="relative mt-2 border-t-4 border-black before:absolute before:-top-2.5 before:h-px before:w-full before:bg-black"
+    >
       <p class="py-6 text-center leading-normal">
         © ART NFT. All Rights Reserved
       </p>
     </footer>
-    <div class="fixed bg-black opacity-0 duration-500 transition-opacity z-10" id="mask"></div>
-    <script src="./assets/js/vendors.js"></script>
-    <script src="./assets/js/all.js"></script>
+    <!-- Wallet -->
+    <div
+      class="fixed inset-0 z-50 bg-white md:inset-auto md:left-1/2 md:top-1/2 md:w-7/12 md:-translate-x-1/2 md:-translate-y-1/2  lg:w-5/12 md:bg-transparent md:px-3 hidden"
+      id="wallet"
+      data-status="show"
+    >
+      <div class="bg-white md:border md:border-black">
+        <div class="relative border-b border-b-black py-4">
+          <h3 class="text-center text-xl leading-[29px]">連結你的錢包</h3>
+          <span
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-xl md:hidden"
+            onclick="toggleWallet()"
+            ><i class="fa-solid fa-x"></i
+          ></span>
+        </div>
+        <div class="h-[calc(100vh-114px)] overflow-auto md:h-auto px-3 md:px-4 py-6 md:text-center">
+          <ul class="md:-mx-1 flex flex-wrap gap-y-2">
+            <li class="w-full md:w-1/2 md:px-1">
+              <input type="checkbox" class="peer hidden" id="MetaMask">
+              <label for="MetaMask" class="relative p-4 font-squada border cursor-pointer border-black flex items-center leading-[17px] peer-checked:button-check">
+                <img src="./assets/images/logo/connect01.png" alt="MetaMask" class="mr-4 w-4 h-4">MetaMask
+              </label>
+            </li>
+            <li class="w-full md:w-1/2 md:px-1">
+              <input type="checkbox" class="peer hidden" id="Coinbase Wallet">
+              <label for="Coinbase Wallet" class="relative p-4 font-squada border cursor-pointer border-black flex items-center leading-[17px] peer-checked:button-check">
+                <img src="./assets/images/logo/connect02.png" alt="Coinbase Wallet" class="mr-4 w-4 h-4">Coinbase Wallet
+              </label>
+            </li>
+            <li class="w-full md:w-1/2 md:px-1">
+              <input type="checkbox" class="peer hidden" id="WalletConnect">
+              <label for="WalletConnect" class="relative p-4 font-squada border cursor-pointer border-black flex items-center leading-[17px] peer-checked:button-check">
+                <img src="./assets/images/logo/connect03.png" alt="WalletConnect" class="mr-4 w-4 h-4">WalletConnect
+              </label>
+            </li>
+            <li class="w-full md:w-1/2 md:px-1">
+              <input type="checkbox" class="peer hidden" id="Phantom">
+              <label for="Phantom" class="relative p-4 font-squada border cursor-pointer border-black flex items-center leading-[17px] peer-checked:button-check">
+                <img src="./assets/images/logo/connect04.png" alt="Phantom" class="mr-4 w-4 h-4">Phantom
+              </label>
+            </li>
+            <li class="w-full md:w-1/2 md:px-1">
+              <input type="checkbox" class="peer hidden" id="Glow">
+              <label for="Glow" class="relative p-4 font-squada border cursor-pointer border-black flex items-center leading-[17px] peer-checked:button-check">
+                <img src="./assets/images/logo/connect05.png" alt="Glow" class="mr-4 w-4 h-4">Glow
+              </label>
+            </li>
+            <li class="w-full md:w-1/2 md:px-1">
+              <input type="checkbox" class="peer hidden" id="Fortmatic">
+              <label for="Fortmatic" class="relative p-4 font-squada border cursor-pointer border-black flex items-center leading-[17px] peer-checked:button-check">
+                <img src="./assets/images/logo/connect06.png" alt="Fortmatic" class="mr-4 w-4 h-4">Fortmatic
+              </label>
+            </li>
+          </ul>
+          <a
+          href="javascript:toggleWallet();"
+          class="fixed bottom-0 w-full left-0  inline-block border border-black bg-crimson py-3 text-center text-lg leading-[26px] text-white active:bg-black md:static md:w-auto md:mt-6 lg:hover:bg-black lg:duration-300 md:px-12"
+          id="connectWallet"
+          >連結錢包</a
+        >
+        </div>
+      </div>
+    </div>
+    <div
+      class="fixed z-20 bg-black opacity-0 transition-opacity duration-500"
+      id="mask"
+    ></div>
+    <div
+      class="fixed z-40 bg-black opacity-0 transition-opacity duration-500"
+      id="higherMask"
+    ></div>
   </body>
+  <script src="./assets/js/vendors.js"></script>
+  <script src="./assets/js/all.js"></script>
 </html>

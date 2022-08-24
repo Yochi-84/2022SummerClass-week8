@@ -7,15 +7,18 @@ current: artworks
 
 <section class="container">
   <div class="flex lg:-mx-3">
-    <!-- TODO: 收合 -->
-    <!-- sidebar -->
+    <!-- Filter -->
     <div
       class="fixed inset-0 z-50 hidden bg-white lg:static lg:z-0 lg:block lg:w-1/4 lg:bg-transparent lg:px-3"
+      id="filter"
+      data-status="show"
     >
       <div class="bg-white lg:border lg:border-black">
         <div class="relative border-b border-b-black py-4 lg:hidden">
           <h3 class="text-center text-xl leading-[29px]">篩選條件</h3>
-          <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xl"
+          <span
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-xl"
+            onclick="toggleFilter()"
             ><i class="fa-solid fa-x"></i
           ></span>
         </div>
@@ -148,12 +151,12 @@ current: artworks
                   </select>
                   <input
                     type="text"
-                    class="w-16 border border-black leading-normal focus:outline-none lg:w-14 xl:w-16"
+                    class="w-16 border border-black px-2 leading-normal focus:outline-none lg:w-14 xl:w-16"
                   />
                   <span class="self-center">-</span>
                   <input
                     type="text"
-                    class="w-16 border border-black leading-normal focus:outline-none lg:w-14 xl:w-16"
+                    class="w-16 border border-black px-2 leading-normal focus:outline-none lg:w-14 xl:w-16"
                   />
                 </div>
               </div>
@@ -411,12 +414,20 @@ current: artworks
           </div>
         </div>
         <a
-          href="#"
+          href="javascript:doFilter();"
           class="fixed bottom-0 block w-full border border-black bg-crimson py-3 text-center text-lg leading-[26px] text-white active:bg-black lg:hidden"
+          id="filterSubmit"
           >確認</a
         >
       </div>
     </div>
+    <!-- Filter Button -->
+    <a
+      href="javascript:toggleFilter();"
+      class="fixed bottom-4 left-1/2 z-10 -translate-x-1/2 bg-black py-2 px-12 leading-normal text-white active:bg-crimson lg:hidden"
+      id="filterBtn"
+      >篩選條件<span class="ml-1 font-squada" id="filterRule">1</span></a
+    >
     <!-- main -->
     <div class="lg:w-3/4 lg:px-3">
       <!-- artist -->
@@ -487,190 +498,199 @@ current: artworks
         <select
           name="sort"
           id="sort"
-          class="float-right appearance-none border border-black py-2 pl-[38px] pr-[54px] leading-normal lg:pr-10 lg:pl-6 focus:outline-none"
+          class="float-right appearance-none border border-black py-2 pl-[38px] pr-[54px] leading-normal focus:outline-none lg:pr-10 lg:pl-6"
         >
           <option value="newest">最新上架</option>
           <option value="newest">價格最高</option>
         </select>
       </div>
       <ul class="-mx-3 mt-6 grid md:mt-10" id="artworkMasonry">
-        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3">
-          <div
-            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
-          >
-            <img src="./assets/images/art20.jpg" alt="這兩隻也太像企鵝了吧" />
+        <li class="mb-12 w-1/2 px-3 md:w-1/3">
+          <div class="group relative">
             <div
-              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+              class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
             >
-              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
-                <h4 class="leading-normal text-white">
-                  沒看過站樹上的企鵝？
-                </h4>
-                <span
-                  class="mt-2 inline-block font-squada leading-[17px] text-white"
-                  ><i class="fa-brands fa-ethereum mr-2"></i>320</span
-                >
-                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              <img src="./assets/images/art20.jpg" alt="這兩隻也太像企鵝了吧" />
+              <div
+                class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+              >
+                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                  <h4 class="leading-normal text-white">沒看過站樹上的企鵝？</h4>
+                  <span
+                    class="mt-2 inline-block font-squada leading-[17px] text-white"
+                    ><i class="fa-brands fa-ethereum mr-2"></i>320</span
+                  >
+                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                </div>
               </div>
             </div>
-          </div>
-          <h3
-            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
-          >
-            <a
-              href="#"
-              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
-              >這兩隻也太像企鵝了吧</a
+            <h3
+              class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
             >
-          </h3>
+              <a
+                href="./introduce.html"
+                class="after:absolute after:inset-0 after:z-5 after:content-[''] lg:pointer-events-none lg:after:hidden"
+                >這兩隻也太像企鵝了吧</a
+              >
+            </h3>
+          </div>
         </li>
-        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3">
-          <div
-            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
-          >
-            <img src="./assets/images/art21.jpg" alt="兩情相悅" />
+        <li class="mb-12 w-1/2 px-3 md:w-1/3">
+          <div class="group relative">
             <div
-              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+              class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
             >
-              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
-                <h4 class="leading-normal text-white">
-                  3/14 情人節外面剛好有兩隻鳥，也在過情人節
-                </h4>
-                <span
-                  class="mt-2 inline-block font-squada leading-[17px] text-white"
-                  ><i class="fa-brands fa-ethereum mr-2"></i>280</span
-                >
-                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              <img src="./assets/images/art21.jpg" alt="兩情相悅" />
+              <div
+                class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+              >
+                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                  <h4 class="leading-normal text-white">
+                    3/14 情人節外面剛好有兩隻鳥，也在過情人節
+                  </h4>
+                  <span
+                    class="mt-2 inline-block font-squada leading-[17px] text-white"
+                    ><i class="fa-brands fa-ethereum mr-2"></i>280</span
+                  >
+                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                </div>
               </div>
             </div>
-          </div>
-          <h3
-            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
-          >
-            <a
-              href="#"
-              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
-              >兩情相悅</a
+            <h3
+              class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
             >
-          </h3>
+              <a
+                href="./introduce.html"
+                class="after:absolute after:inset-0 after:z-5 after:content-[''] lg:pointer-events-none lg:after:hidden"
+                >兩情相悅</a
+              >
+            </h3>
+          </div>
         </li>
-        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3">
-          <div
-            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
-          >
-            <img src="./assets/images/art22.jpg" alt="群聚的小鳥們" />
+        <li class="mb-12 w-1/2 px-3 md:w-1/3">
+          <div class="group relative">
             <div
-              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+              class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
             >
-              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
-                <h4 class="leading-normal text-white">
-                  陽性小圈圈，我又被排擠...
-                </h4>
-                <span
-                  class="mt-2 inline-block font-squada leading-[17px] text-white"
-                  ><i class="fa-brands fa-ethereum mr-2"></i>200</span
-                >
-                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              <img src="./assets/images/art22.jpg" alt="群聚的小鳥們" />
+              <div
+                class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+              >
+                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                  <h4 class="leading-normal text-white">
+                    陽性小圈圈，我又被排擠...
+                  </h4>
+                  <span
+                    class="mt-2 inline-block font-squada leading-[17px] text-white"
+                    ><i class="fa-brands fa-ethereum mr-2"></i>200</span
+                  >
+                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                </div>
               </div>
             </div>
-          </div>
-          <h3
-            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
-          >
-            <a
-              href="#"
-              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
-              >群聚的小鳥們</a
+            <h3
+              class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
             >
-          </h3>
+              <a
+                href="./introduce.html"
+                class="after:absolute after:inset-0 after:z-5 after:content-[''] lg:pointer-events-none lg:after:hidden"
+                >群聚的小鳥們</a
+              >
+            </h3>
+          </div>
         </li>
-        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3">
-          <div
-            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
-          >
-            <img src="./assets/images/art23.jpg" alt="與你分享的快樂勝過獨自擁有" />
+        <li class="mb-12 w-1/2 px-3 md:w-1/3">
+          <div class="group relative">
             <div
-              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+              class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
             >
-              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
-                <h4 class="leading-normal text-white">
-                  至今我仍深深感動~~
-                </h4>
-                <span
-                  class="mt-2 inline-block font-squada leading-[17px] text-white"
-                  ><i class="fa-brands fa-ethereum mr-2"></i>300</span
-                >
-                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              <img
+                src="./assets/images/art23.jpg"
+                alt="與你分享的快樂勝過獨自擁有"
+              />
+              <div
+                class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+              >
+                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                  <h4 class="leading-normal text-white">至今我仍深深感動~~</h4>
+                  <span
+                    class="mt-2 inline-block font-squada leading-[17px] text-white"
+                    ><i class="fa-brands fa-ethereum mr-2"></i>300</span
+                  >
+                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                </div>
               </div>
             </div>
-          </div>
-          <h3
-            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
-          >
-            <a
-              href="#"
-              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
-              >與你分享的快樂勝過獨自擁有</a
+            <h3
+              class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
             >
-          </h3>
+              <a
+                href="./introduce.html"
+                class="after:absolute after:inset-0 after:z-5 after:content-[''] lg:pointer-events-none lg:after:hidden"
+                >與你分享的快樂勝過獨自擁有</a
+              >
+            </h3>
+          </div>
         </li>
-        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3">
-          <div
-            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
-          >
-            <img src="./assets/images/art24.jpg" alt="會唱metal的鳥" />
+        <li class="mb-12 w-1/2 px-3 md:w-1/3">
+          <div class="group relative">
             <div
-              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+              class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
             >
-              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
-                <h4 class="leading-normal text-white">嘰~~~~~~~</h4>
-                <span
-                  class="mt-2 inline-block font-squada leading-[17px] text-white"
-                  ><i class="fa-brands fa-ethereum mr-2"></i>150</span
-                >
-                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              <img src="./assets/images/art24.jpg" alt="會唱metal的鳥" />
+              <div
+                class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+              >
+                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                  <h4 class="leading-normal text-white">嘰~~~~~~~</h4>
+                  <span
+                    class="mt-2 inline-block font-squada leading-[17px] text-white"
+                    ><i class="fa-brands fa-ethereum mr-2"></i>150</span
+                  >
+                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                </div>
               </div>
             </div>
-          </div>
-          <h3
-            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
-          >
-            <a
-              href="#"
-              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
-              >會唱metal的鳥</a
+            <h3
+              class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
             >
-          </h3>
+              <a
+                href="./introduce.html"
+                class="after:absolute after:inset-0 after:z-5 after:content-[''] lg:pointer-events-none lg:after:hidden"
+                >會唱metal的鳥</a
+              >
+            </h3>
+          </div>
         </li>
-        <li class="group relative mb-12 w-1/2 px-3 md:w-1/3">
-          <div
-            class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
-          >
-            <img src="./assets/images/art25.jpg" alt="一大一小兩個恰恰好" />
+        <li class="mb-12 w-1/2 px-3 md:w-1/3">
+          <div class="group relative">
             <div
-              class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+              class="relative border-8 border-white md:border-[16px] lg:border-[24px]"
             >
-              <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
-                <h4 class="leading-normal text-white">
-                  清蒸紅燒可以吃飽飽
-                </h4>
-                <span
-                  class="mt-2 inline-block font-squada leading-[17px] text-white"
-                  ><i class="fa-brands fa-ethereum mr-2"></i>200</span
-                >
-                <a href="#" class="btn mt-auto self-end bg-white">more</a>
+              <img src="./assets/images/art25.jpg" alt="一大一小兩個恰恰好" />
+              <div
+                class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
+              >
+                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                  <h4 class="leading-normal text-white">清蒸紅燒可以吃飽飽</h4>
+                  <span
+                    class="mt-2 inline-block font-squada leading-[17px] text-white"
+                    ><i class="fa-brands fa-ethereum mr-2"></i>200</span
+                  >
+                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                </div>
               </div>
             </div>
-          </div>
-          <h3
-            class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
-          >
-            <a
-              href="#"
-              class="after:absolute after:inset-0 after:z-10 after:content-[''] lg:pointer-events-none lg:after:hidden"
-              >一大一小兩個恰恰好</a
+            <h3
+              class="py-2 text-sm font-bold leading-5 md:border-b md:border-b-black md:py-3 md:text-base md:leading-normal lg:py-4"
             >
-          </h3>
+              <a
+                href="./introduce.html"
+                class="after:absolute after:inset-0 after:z-5 after:content-[''] lg:pointer-events-none lg:after:hidden"
+                >一大一小兩個恰恰好</a
+              >
+            </h3>
+          </div>
         </li>
       </ul>
     </div>
