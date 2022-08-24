@@ -66,3 +66,25 @@
     @apply inset-0 !opacity-70;
   }
 }
+
+
+/* Swiper */
+
+/* index */
+
+
+/* introduce */
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0;
+}
+
+.swiper-pagination .swiper-pagination-bullet{
+  border-radius: 0;
+  background: #000;
+  opacity: 1;
+}
+
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #E6553B;
+  width: 16px;
+}

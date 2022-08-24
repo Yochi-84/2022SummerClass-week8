@@ -60,14 +60,23 @@ if (document.querySelector('#filterSubmit')) {
   io.observe(document.querySelector('#filterSubmit'));
 }
 
-let swiper = new Swiper(".mySwiper", {
+let indexSwiper = new Swiper(".indexSwiper", {
   slidesPerView: 3,
   // spaceBetween: 30,
-  loop: true,
+  // loop: true,
   grabCursor: true,
-  // loopFillGroupWithBlank: true,
-  centeredSlides: true,
-  slideActiveClass: 'active',
+  // centeredSlides: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1026: {
+      slidesPerView: 4,
+    }
+  },
   navigation: {
     nextEl: "#swiper-next",
     prevEl: "#swiper-prev",
@@ -78,6 +87,29 @@ let swiper = new Swiper(".mySwiper", {
   }
 });
 
+let introSwiper = new Swiper(".introSwiper", {
+  spaceBetween: 24,
+  loop: true,
+  loopFillGroupWithBlank: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+    520: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+    },
+    1026: {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+    }
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  }
+});
 
 let indexMasonry = document.querySelector('#indexMasonry');
 if (indexMasonry) {
@@ -112,10 +144,55 @@ if (artworkMasonry) {
   });
 };
 
+
+let iMasonry = null;
+let introMasonry = document.querySelector('#introMasonry');
+if (introMasonry) {
+  iMasonry = new Masonry(introMasonry, {
+    itemSelector: 'li[data-role="information"]',
+    horizontalOrder: true
+  });
+};
+
 let exploreMasonry = document.querySelector('#exploreMasonry');
 if (exploreMasonry) {
-  let aMasonry = new Masonry(exploreMasonry, {
+  let eMasonry = new Masonry(exploreMasonry, {
     itemSelector: 'li',
     horizontalOrder: true
   });
 };
+
+
+// 監聽 introduce 資訊欄開合進行 border-bottom 顯示/隱藏
+const url = new URL(location.href);
+if (url.pathname.endsWith('introduce.html')) {
+  let observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (mutation.oldValue === "true") {
+        mutation.target.parentNode.classList.remove("border-b");
+      } else {
+        mutation.target.parentNode.classList.add("border-b");
+      }
+
+      // 收合後瀑布流重繪
+      setTimeout(function () {
+        iMasonry.destroy();
+        iMasonry = new Masonry(document.querySelector('#introMasonry'), {
+          itemSelector: 'li[data-role="information"]',
+          horizontalOrder: true
+        });
+      },400)
+
+    });
+  });
+
+  let dom = Array.from(document.querySelectorAll('#introMasonry label'));
+  dom.forEach(item => {
+    observer.observe(item, {
+      attributes: true,
+      attributeFilter: ["aria-expanded"],
+      attributeOldValue: true
+    });
+  })
+
+}
