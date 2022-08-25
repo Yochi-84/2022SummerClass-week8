@@ -1,4 +1,4 @@
-# Week6 - Coding Home 程式家教
+# Week8 - NFT ART
 >　Demo: [https://yochi-84.github.io/2022SummerClass-week8/](https://yochi-84.github.io/2022SummerClass-week8/)
 
 ## 網頁切版直播班 Gulp 範例 - Tailwind 版本
