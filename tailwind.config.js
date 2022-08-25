@@ -32,6 +32,7 @@ module.exports = {
       },
       colors: {
         'crimson': '#E6553B',
+        'lemon': '#53C139',
         'gray': {
           DEFAULT: '#F0F0F0',
           'dark': '#808080'

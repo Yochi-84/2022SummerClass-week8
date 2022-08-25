@@ -79,6 +79,32 @@
   height: 232px;
 }
 
+.indexSwiper .swiper-slide h3,
+.indexSwiper .swiper-slide p,
+.indexSwiper .swiper-slide .btn {
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.indexSwiper .swiper-slide p {
+  transition: 0.5s 0.5s;
+}
+
+.indexSwiper .swiper-slide.swiper-slide-active h3,
+.indexSwiper .swiper-slide.swiper-slide-active p,
+.indexSwiper .swiper-slide.swiper-slide-active .btn {
+  opacity: 1;
+}
+
+.indexSwiper .swiper-slide.swiper-slide-prev h3,
+.indexSwiper .swiper-slide.swiper-slide-next h3,
+.indexSwiper .swiper-slide.swiper-slide-prev p,
+.indexSwiper .swiper-slide.swiper-slide-next p,
+.indexSwiper .swiper-slide.swiper-slide-prev .btn,
+.indexSwiper .swiper-slide.swiper-slide-next .btn {
+  transition: 0.5s;
+}
+
 @media screen and (min-width: 576px) {
   .indexSwiper .swiper-wrapper {
     height: 395px;
@@ -92,32 +118,6 @@
 @media screen and (min-width: 768px) {
   .indexSwiper .swiper-slide {
     transition: 0.8s;
-  }
-
-  .indexSwiper .swiper-slide h3,
-  .indexSwiper .swiper-slide p,
-  .indexSwiper .swiper-slide .btn {
-    opacity: 0;
-    transition: 0.8s;
-  }
-
-  .indexSwiper .swiper-slide p {
-    transition: 0.5s 0.5s;
-  }
-
-  .indexSwiper .swiper-slide.swiper-slide-active h3,
-  .indexSwiper .swiper-slide.swiper-slide-active p,
-  .indexSwiper .swiper-slide.swiper-slide-active .btn {
-    opacity: 1;
-  }
-
-  .indexSwiper .swiper-slide.swiper-slide-prev h3,
-  .indexSwiper .swiper-slide.swiper-slide-next h3,
-  .indexSwiper .swiper-slide.swiper-slide-prev p,
-  .indexSwiper .swiper-slide.swiper-slide-next p,
-  .indexSwiper .swiper-slide.swiper-slide-prev .btn,
-  .indexSwiper .swiper-slide.swiper-slide-next .btn {
-    transition: 0.5s;
   }
 }
 
@@ -145,7 +145,7 @@
   }
 }
 
-/* introduce */
+/* all pagination */
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 0;
 }
@@ -163,4 +163,12 @@
 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #E6553B;
   width: 16px;
+}
+
+
+/* Ranking List */
+@media screen and (min-width: 1026px) {
+  li[data-role="list"] .collapse {
+    display: flex;
+  }
 }
