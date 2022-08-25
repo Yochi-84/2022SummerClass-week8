@@ -1,10 +1,116 @@
----
-title: ART NFT - Homepage
-layout: ./app/layout.ejs
-engine: ejs
-current: index
----
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ART NFT - Homepage</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/style/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/style/all.css" />
+  </head>
 
+  <body>
+    <header class="fixed top-0 z-30 w-full border-b border-b-black bg-gray">
+      <nav class="container flex items-center gap-x-6 lg:gap-x-0">
+        <!-- logo -->
+        <div class="flex-grow py-4 lg:border-r lg:border-r-black lg:py-8">
+          <h1
+            class="h-[18px] w-[85px] overflow-hidden whitespace-nowrap bg-[url('../images/logo.svg')] bg-cover bg-no-repeat indent-[101%] lg:h-10 lg:w-[190px]"
+          >
+            <a href="./index.html" class="block h-full">ART NFT</a>
+          </h1>
+        </div>
+        <!-- searchbar -->
+        <div class="lg:border-r lg:border-r-black">
+          <div
+            class="absolute right-1/2 top-0 z-30 flex w-full max-w-0 translate-x-1/2 items-center overflow-hidden bg-gray py-4 text-sm leading-5 duration-500 md:static md:max-w-full md:translate-x-0 lg:px-12 lg:py-10 lg:text-base lg:leading-normal"
+            id="search-bar"
+          >
+            <i
+              class="fa-solid fa-angle-left mr-4 md:hidden"
+              onclick="toggleSearch()"
+            ></i>
+            <input
+              type="text"
+              placeholder="搜尋作品名稱、藝術家名稱"
+              class="mr-4 flex-grow bg-transparent leading-normal placeholder:text-[#808080] focus:outline-0 md:mr-6 md:text-base"
+            />
+            <i
+              class="fa-solid fa-magnifying-glass cursor-pointer text-lg duration-300 hover:text-crimson md:text-xl"
+              onclick="location.href='artist.html'"
+            ></i>
+          </div>
+          <div>
+            <i
+              class="fa-solid fa-magnifying-glass text-lg md:hidden md:text-xl"
+              onclick="toggleSearch()"
+            ></i>
+          </div>
+        </div>
+        <!-- menu -->
+        <ul
+          class="absolute bottom-0 left-0 max-h-0 w-full translate-y-full overflow-hidden bg-white px-3 text-center transition-[max-height] duration-500 ease-linear lg:static lg:flex lg:max-h-full lg:w-auto lg:translate-y-0 lg:items-center lg:bg-transparent lg:px-0 lg:pb-0 lg:duration-[0s]"
+          id="menu"
+          data-menu-status="close"
+        >
+          <li
+            class="border-b border-b-black lg:border-b-0 lg:border-r lg:border-r-black"
+          >
+            <a
+              href="./explore.html"
+              class="block h-full py-6 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
+              >探索</a
+            >
+          </li>
+          <li
+            class="border-b border-b-black lg:border-b-0 lg:border-r lg:border-r-black"
+          >
+            <a
+              href="./ranking.html"
+              class="block h-full py-6 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
+              >市值</a
+            >
+          </li>
+          <li class="mb-6 lg:mb-0">
+            <a
+              href="javascript:toggleWallet();"
+              class="hidden h-full py-6 duration-300 lg:block lg:py-10 lg:pl-12 lg:hover:text-crimson"
+              ><i class="fa-solid fa-wallet"></i
+            ></a>
+            <a
+              href="javascript:toggleWallet();"
+              class="block h-full py-6 text-lg font-bold leading-normal active:bg-crimson active:text-white active:ring-1 active:ring-black lg:hidden"
+              >連結錢包</a
+            >
+          </li>
+        </ul>
+        <!-- menu-control -->
+        <div class="relative py-4 lg:hidden lg:py-8" onclick="toggleMenu()">
+          <i
+            class="fa-solid fa-bars text-lg delay-200 lg:text-2xl"
+            id="open"
+          ></i>
+          <i
+            class="fa-solid fa-close invisible absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-lg delay-200 lg:text-2xl"
+            id="close"
+          ></i>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pt-[50px] lg:pt-[145px]">
+      
 <!-- Recommend -->
 <section class="flex flex-wrap lg:container">
   <div
@@ -749,3 +855,132 @@ current: index
     </div>
   </div>
 </section>
+
+    </main>
+
+    <footer
+      class="relative mt-2 border-t-4 border-black before:absolute before:-top-2.5 before:h-px before:w-full before:bg-black"
+    >
+      <p class="py-6 text-center leading-normal">
+        © ART NFT. All Rights Reserved
+      </p>
+    </footer>
+    <!-- Wallet -->
+    <div
+      class="fixed inset-0 z-50 hidden bg-white md:inset-auto md:left-1/2 md:top-1/2 md:w-7/12 md:-translate-x-1/2 md:-translate-y-1/2 md:bg-transparent md:px-3 lg:w-5/12"
+      id="wallet"
+      data-status="show"
+    >
+      <div class="bg-white md:border md:border-black">
+        <div class="relative border-b border-b-black py-4">
+          <h3 class="text-center text-xl leading-[29px]">連結你的錢包</h3>
+          <span
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-xl md:hidden"
+            onclick="toggleWallet()"
+            ><i class="fa-solid fa-x"></i
+          ></span>
+        </div>
+        <div
+          class="h-[calc(100vh-114px)] overflow-auto px-3 py-6 md:h-auto md:px-4 md:text-center"
+        >
+          <ul class="flex flex-wrap gap-y-2 md:-mx-1">
+            <li class="w-full md:w-1/2 md:px-1">
+              <input type="checkbox" class="peer hidden" id="MetaMask" />
+              <label
+                for="MetaMask"
+                class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
+              >
+                <img
+                  src="./assets/images/logo/connect01.png"
+                  alt="MetaMask"
+                  class="mr-4 h-4 w-4"
+                />MetaMask
+              </label>
+            </li>
+            <li class="w-full md:w-1/2 md:px-1">
+              <input type="checkbox" class="peer hidden" id="Coinbase Wallet" />
+              <label
+                for="Coinbase Wallet"
+                class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
+              >
+                <img
+                  src="./assets/images/logo/connect02.png"
+                  alt="Coinbase Wallet"
+                  class="mr-4 h-4 w-4"
+                />Coinbase Wallet
+              </label>
+            </li>
+            <li class="w-full md:w-1/2 md:px-1">
+              <input type="checkbox" class="peer hidden" id="WalletConnect" />
+              <label
+                for="WalletConnect"
+                class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
+              >
+                <img
+                  src="./assets/images/logo/connect03.png"
+                  alt="WalletConnect"
+                  class="mr-4 h-4 w-4"
+                />WalletConnect
+              </label>
+            </li>
+            <li class="w-full md:w-1/2 md:px-1">
+              <input type="checkbox" class="peer hidden" id="Phantom" />
+              <label
+                for="Phantom"
+                class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
+              >
+                <img
+                  src="./assets/images/logo/connect04.png"
+                  alt="Phantom"
+                  class="mr-4 h-4 w-4"
+                />Phantom
+              </label>
+            </li>
+            <li class="w-full md:w-1/2 md:px-1">
+              <input type="checkbox" class="peer hidden" id="Glow" />
+              <label
+                for="Glow"
+                class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
+              >
+                <img
+                  src="./assets/images/logo/connect05.png"
+                  alt="Glow"
+                  class="mr-4 h-4 w-4"
+                />Glow
+              </label>
+            </li>
+            <li class="w-full md:w-1/2 md:px-1">
+              <input type="checkbox" class="peer hidden" id="Fortmatic" />
+              <label
+                for="Fortmatic"
+                class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
+              >
+                <img
+                  src="./assets/images/logo/connect06.png"
+                  alt="Fortmatic"
+                  class="mr-4 h-4 w-4"
+                />Fortmatic
+              </label>
+            </li>
+          </ul>
+          <a
+            href="javascript:toggleWallet();"
+            class="fixed bottom-0 left-0 inline-block w-full border border-black bg-crimson py-3 text-center text-lg leading-[26px] text-white active:bg-black md:static md:mt-6 md:w-auto md:px-12 lg:duration-300 lg:hover:bg-black"
+            id="connectWallet"
+            >連結錢包</a
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="fixed z-20 bg-black -top-1 left-0 w-0 h-0 opacity-0 mask lg:hidden"
+      id="mask"
+    ></div>
+    <div
+      class="fixed z-40 bg-black -top-1 left-0 w-0 h-0 opacity-0 mask"
+      id="higherMask"
+    ></div>
+  </body>
+  <script src="./assets/js/vendors.js"></script>
+  <script src="./assets/js/all.js"></script>
+</html>
