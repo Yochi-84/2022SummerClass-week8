@@ -32,8 +32,15 @@ function doFilter() {
   toggleFilter();
 }
 
+
+// 監聽 mask 是否存在於畫面，是則隱藏捲軸
+let maskStatus = {
+  mask: false,
+  higherMask: false
+}
 let io_mask = new IntersectionObserver((entries) => {
-  if (entries.some(item => item.isIntersecting)) {
+  maskStatus[entries[0].target.id] = entries[0].isIntersecting;
+  if (Object.values(maskStatus).some(item => item)) {
     document.querySelector('body').classList.add("overflow-y-hidden", "max-h-screen");
   } else {
     document.querySelector('body').classList.remove("overflow-y-hidden", "max-h-screen");

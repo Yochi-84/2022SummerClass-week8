@@ -51,20 +51,22 @@
     z-index: 5;
   }
 
-  /* navbar */
   .nav-open {
-    @apply !max-h-screen;
+    @apply max-h-screen;
   }
 
-  /* searchBar */
   .search-show {
-    @apply !max-w-full !px-3;
+    @apply max-w-full px-3;
   }
 
-  /* mask */
-  .show-mask {
-    @apply inset-0 !opacity-70;
+  .mask.show-mask {
+    @apply w-full h-full opacity-70 top-0 left-0;
+    transition: opacity 0.5s;
   }
+}
+
+.mask {
+  transition: opacity 1s, width 0s 0.5s, height 0s 0.5s,top 0s 0.5s,left 0s 0.5s;
 }
 
 

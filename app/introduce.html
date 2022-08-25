@@ -17,7 +17,7 @@ current: introduce
     </div>
     <div class="md:w-1/2 md:px-3">
       <div class="h-full bg-white">
-        <div class="border-b border-b-black p-4 pb-6 md:px-4 md:pt-10 md:pb-8">
+        <div class="border-b border-b-black p-4 pb-6 md:px-10 md:pt-10 md:pb-8">
           <div
             class="flex flex-col-reverse gap-y-2 md:flex-row md:items-center md:justify-between"
           >
@@ -30,7 +30,7 @@ current: introduce
               <img
                 src="./assets/images/artist01.jpg"
                 alt="Michael"
-                class="mr-1 h-8 w-8 rounded-full"
+                class="mr-2 h-8 w-8 rounded-full"
               />
               <span class="font-squada">Michael</span>
             </div>
@@ -49,12 +49,12 @@ current: introduce
 
             <a
               href="#"
-              class="block border border-black bg-crimson py-2 px-6 text-white duration-300 hover:bg-black"
+              class="block whitespace-nowrap border border-black bg-crimson py-2 px-12 text-white duration-300 hover:bg-black"
               >出價</a
             >
           </div>
         </div>
-        <div class="leading-normalign-items-start py-6 px-4 md:py-8 md:px-10">
+        <div class="py-6 px-4 leading-normal md:py-8 md:px-10">
           <p>3/14情人節外面剛好有兩隻鳥，也在過情人節。</p>
           <p class="mt-4">
             而且其中一隻竟然有梳油頭，不知道是不是有用定型液，他們感情真好，出門還會特別打扮，看著看著不禁思考，我怎麼會變這樣？
@@ -76,7 +76,7 @@ current: introduce
           <h2 class="mb-0 border-b border-b-black p-4 md:p-6" id="property">
             <label
               for="propertyButton"
-              class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white pt-4 pb-2 text-left font-bold leading-normal transition"
+              class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white text-left font-bold leading-normal transition"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseProperty"
@@ -131,7 +131,7 @@ current: introduce
           <h2 class="mb-0 border-b border-b-black p-4 md:p-6" id="bid">
             <label
               for="bidButton"
-              class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white pt-4 pb-2 text-left font-bold leading-normal transition"
+              class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white text-left font-bold leading-normal transition"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseBid"
@@ -174,7 +174,7 @@ current: introduce
                     ></i>
                     <span class="font-squada">0.044Eth</span>
                   </td>
-                  <td class="py-2 md:pl-4">
+                  <td class="py-2 text-right md:pl-4 md:text-left">
                     <span class="leading-normal text-gray-dark">3個月後</span>
                   </td>
                 </tr>
@@ -190,7 +190,7 @@ current: introduce
                     ></i>
                     <span class="font-squada">0.054Eth</span>
                   </td>
-                  <td class="py-2 md:pl-4">
+                  <td class="py-2 text-right md:pl-4 md:text-left">
                     <span class="leading-normal text-gray-dark">1個月後</span>
                   </td>
                 </tr>
@@ -206,7 +206,7 @@ current: introduce
                     ></i>
                     <span class="font-squada">0.044Eth</span>
                   </td>
-                  <td class="py-2 md:pl-4">
+                  <td class="py-2 text-right md:pl-4 md:text-left">
                     <span class="leading-normal text-gray-dark">2週後</span>
                   </td>
                 </tr>
@@ -223,7 +223,7 @@ current: introduce
           <h2 class="mb-0 border-b border-b-black p-4 md:p-6" id="info">
             <label
               for="infoButton"
-              class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white pt-4 pb-2 text-left font-bold leading-normal transition"
+              class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white text-left font-bold leading-normal transition"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseInfo"
@@ -270,7 +270,7 @@ current: introduce
           <h2 class="mb-0 border-b border-b-black p-4 md:p-6" id="history">
             <label
               for="historyButton"
-              class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white pt-4 pb-2 text-left font-bold leading-normal transition"
+              class="relative flex w-full cursor-pointer items-center justify-between border-0 bg-white text-left font-bold leading-normal transition"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseHistory"
@@ -349,13 +349,13 @@ current: introduce
       >more</a
     >
   </h2>
-  <div class="mt-6 md:mt-12 mb-10 md:mb-20">
-    <div class="swiper pb-[34px] md:pb-[58px] introSwiper">
+  <div class="mt-6 mb-10 md:mt-12 md:mb-20">
+    <div class="swiper introSwiper pb-[34px] md:pb-[58px]">
       <ul class="swiper-wrapper">
         <li class="swiper-slide">
           <div class="group relative">
             <div
-              class="relative border-8 border-white md:border-[16px] lg:border-[24px] h-[220px] md:h-[320px] lg:h-[375px]"
+              class="relative h-[220px] border-8 border-white md:h-[320px] md:border-[16px] lg:h-[375px] lg:border-[24px]"
             >
               <img
                 src="./assets/images/art23.jpg"
@@ -365,13 +365,19 @@ current: introduce
               <div
                 class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
               >
-                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <div
+                  class="absolute inset-4 flex flex-col p-4 ring-1 ring-white"
+                >
                   <h4 class="leading-normal text-white">至今我仍深深感動~~</h4>
                   <span
                     class="mt-2 inline-block font-squada leading-[17px] text-white"
                     ><i class="fa-brands fa-ethereum mr-2"></i>300</span
                   >
-                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                  <a
+                    href="./introduce.html"
+                    class="btn mt-auto self-end bg-white"
+                    >more</a
+                  >
                 </div>
               </div>
             </div>
@@ -380,7 +386,7 @@ current: introduce
             >
               <a
                 href="./introduce.html"
-                class="after:absolute after:inset-0 after:z-5 after:content-[''] lg:pointer-events-none lg:after:hidden"
+                class="after:z-5 after:absolute after:inset-0 after:content-[''] lg:pointer-events-none lg:after:hidden"
                 >與你分享的快樂勝過獨自擁有</a
               >
             </h3>
@@ -389,19 +395,29 @@ current: introduce
         <li class="swiper-slide">
           <div class="group relative">
             <div
-              class="relative border-8 border-white md:border-[16px] lg:border-[24px] h-[220px] md:h-[320px] lg:h-[375px]"
+              class="relative h-[220px] border-8 border-white md:h-[320px] md:border-[16px] lg:h-[375px] lg:border-[24px]"
             >
-              <img src="./assets/images/art27.jpg" alt="我真的受傷了" class="h-full w-full object-cover object-center"/>
+              <img
+                src="./assets/images/art27.jpg"
+                alt="我真的受傷了"
+                class="h-full w-full object-cover object-center"
+              />
               <div
                 class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
               >
-                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <div
+                  class="absolute inset-4 flex flex-col p-4 ring-1 ring-white"
+                >
                   <h4 class="leading-normal text-white">我假裝沒看到</h4>
                   <span
                     class="mt-2 inline-block font-squada leading-[17px] text-white"
                     ><i class="fa-brands fa-ethereum mr-2"></i>300</span
                   >
-                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                  <a
+                    href="./introduce.html"
+                    class="btn mt-auto self-end bg-white"
+                    >more</a
+                  >
                 </div>
               </div>
             </div>
@@ -419,19 +435,31 @@ current: introduce
         <li class="swiper-slide">
           <div class="group relative">
             <div
-              class="relative border-8 border-white md:border-[16px] lg:border-[24px] h-[220px] md:h-[320px] lg:h-[375px]"
+              class="relative h-[220px] border-8 border-white md:h-[320px] md:border-[16px] lg:h-[375px] lg:border-[24px]"
             >
-              <img src="./assets/images/art20.jpg" alt="這兩隻也太像企鵝了吧" class="h-full w-full object-cover object-center"/>
+              <img
+                src="./assets/images/art20.jpg"
+                alt="這兩隻也太像企鵝了吧"
+                class="h-full w-full object-cover object-center"
+              />
               <div
                 class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
               >
-                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
-                  <h4 class="leading-normal text-white">沒看過站樹上的企鵝？</h4>
+                <div
+                  class="absolute inset-4 flex flex-col p-4 ring-1 ring-white"
+                >
+                  <h4 class="leading-normal text-white">
+                    沒看過站樹上的企鵝？
+                  </h4>
                   <span
                     class="mt-2 inline-block font-squada leading-[17px] text-white"
                     ><i class="fa-brands fa-ethereum mr-2"></i>320</span
                   >
-                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                  <a
+                    href="./introduce.html"
+                    class="btn mt-auto self-end bg-white"
+                    >more</a
+                  >
                 </div>
               </div>
             </div>
@@ -440,7 +468,7 @@ current: introduce
             >
               <a
                 href="./introduce.html"
-                class="after:absolute after:inset-0 after:z-5 after:content-[''] lg:pointer-events-none lg:after:hidden"
+                class="after:z-5 after:absolute after:inset-0 after:content-[''] lg:pointer-events-none lg:after:hidden"
                 >這兩隻也太像企鵝了吧</a
               >
             </h3>
@@ -449,19 +477,29 @@ current: introduce
         <li class="swiper-slide">
           <div class="group relative">
             <div
-              class="relative border-8 border-white md:border-[16px] lg:border-[24px] h-[220px] md:h-[320px] lg:h-[375px]"
+              class="relative h-[220px] border-8 border-white md:h-[320px] md:border-[16px] lg:h-[375px] lg:border-[24px]"
             >
-              <img src="./assets/images/art24.jpg" alt="會唱metal的鳥" class="h-full w-full object-cover object-center" />
+              <img
+                src="./assets/images/art24.jpg"
+                alt="會唱metal的鳥"
+                class="h-full w-full object-cover object-center"
+              />
               <div
                 class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
               >
-                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <div
+                  class="absolute inset-4 flex flex-col p-4 ring-1 ring-white"
+                >
                   <h4 class="leading-normal text-white">嘰~~~~~~~</h4>
                   <span
                     class="mt-2 inline-block font-squada leading-[17px] text-white"
                     ><i class="fa-brands fa-ethereum mr-2"></i>150</span
                   >
-                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                  <a
+                    href="./introduce.html"
+                    class="btn mt-auto self-end bg-white"
+                    >more</a
+                  >
                 </div>
               </div>
             </div>
@@ -470,7 +508,7 @@ current: introduce
             >
               <a
                 href="./introduce.html"
-                class="after:absolute after:inset-0 after:z-5 after:content-[''] lg:pointer-events-none lg:after:hidden"
+                class="after:z-5 after:absolute after:inset-0 after:content-[''] lg:pointer-events-none lg:after:hidden"
                 >會唱metal的鳥</a
               >
             </h3>
@@ -479,19 +517,29 @@ current: introduce
         <li class="swiper-slide">
           <div class="group relative">
             <div
-              class="relative border-8 border-white md:border-[16px] lg:border-[24px] h-[220px] md:h-[320px] lg:h-[375px]"
+              class="relative h-[220px] border-8 border-white md:h-[320px] md:border-[16px] lg:h-[375px] lg:border-[24px]"
             >
-              <img src="./assets/images/art25.jpg" alt="一大一小兩個恰恰好" class="h-full w-full object-cover object-center" />
+              <img
+                src="./assets/images/art25.jpg"
+                alt="一大一小兩個恰恰好"
+                class="h-full w-full object-cover object-center"
+              />
               <div
                 class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
               >
-                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <div
+                  class="absolute inset-4 flex flex-col p-4 ring-1 ring-white"
+                >
                   <h4 class="leading-normal text-white">清蒸紅燒可以吃飽飽</h4>
                   <span
                     class="mt-2 inline-block font-squada leading-[17px] text-white"
                     ><i class="fa-brands fa-ethereum mr-2"></i>200</span
                   >
-                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                  <a
+                    href="./introduce.html"
+                    class="btn mt-auto self-end bg-white"
+                    >more</a
+                  >
                 </div>
               </div>
             </div>
@@ -500,7 +548,7 @@ current: introduce
             >
               <a
                 href="./introduce.html"
-                class="after:absolute after:inset-0 after:z-5 after:content-[''] lg:pointer-events-none lg:after:hidden"
+                class="after:z-5 after:absolute after:inset-0 after:content-[''] lg:pointer-events-none lg:after:hidden"
                 >一大一小兩個恰恰好</a
               >
             </h3>
@@ -509,13 +557,19 @@ current: introduce
         <li class="swiper-slide">
           <div class="group relative">
             <div
-              class="relative border-8 border-white md:border-[16px] lg:border-[24px] h-[220px] md:h-[320px] lg:h-[375px]"
+              class="relative h-[220px] border-8 border-white md:h-[320px] md:border-[16px] lg:h-[375px] lg:border-[24px]"
             >
-              <img src="./assets/images/art19.jpg" alt="野小孩——叫你不要玩那個" class="h-full w-full object-cover object-center" />
+              <img
+                src="./assets/images/art19.jpg"
+                alt="野小孩——叫你不要玩那個"
+                class="h-full w-full object-cover object-center"
+              />
               <div
                 class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
               >
-                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <div
+                  class="absolute inset-4 flex flex-col p-4 ring-1 ring-white"
+                >
                   <h4 class="leading-normal text-white">
                     這看似羞澀又帶點騷氣的姿勢，是變態吧(？
                   </h4>
@@ -523,7 +577,11 @@ current: introduce
                     class="mt-2 inline-block font-squada leading-[17px] text-white"
                     ><i class="fa-brands fa-ethereum mr-2"></i>300</span
                   >
-                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                  <a
+                    href="./introduce.html"
+                    class="btn mt-auto self-end bg-white"
+                    >more</a
+                  >
                 </div>
               </div>
             </div>
@@ -541,19 +599,29 @@ current: introduce
         <li class="swiper-slide">
           <div class="group relative">
             <div
-              class="relative border-8 border-white md:border-[16px] lg:border-[24px] h-[220px] md:h-[320px] lg:h-[375px]"
+              class="relative h-[220px] border-8 border-white md:h-[320px] md:border-[16px] lg:h-[375px] lg:border-[24px]"
             >
-              <img src="./assets/images/art06.jpg" alt="每當夏天我吹著溫暖的風" class="h-full w-full object-cover object-center" />
+              <img
+                src="./assets/images/art06.jpg"
+                alt="每當夏天我吹著溫暖的風"
+                class="h-full w-full object-cover object-center"
+              />
               <div
                 class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
               >
-                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <div
+                  class="absolute inset-4 flex flex-col p-4 ring-1 ring-white"
+                >
                   <h4 class="leading-normal text-white">沒冷氣吹要熱死啦...</h4>
                   <span
                     class="mt-2 inline-block font-squada leading-[17px] text-white"
                     ><i class="fa-brands fa-ethereum mr-2"></i>300</span
                   >
-                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                  <a
+                    href="./introduce.html"
+                    class="btn mt-auto self-end bg-white"
+                    >more</a
+                  >
                 </div>
               </div>
             </div>
@@ -571,13 +639,19 @@ current: introduce
         <li class="swiper-slide">
           <div class="group relative">
             <div
-              class="relative border-8 border-white md:border-[16px] lg:border-[24px] h-[220px] md:h-[320px] lg:h-[375px]"
+              class="relative h-[220px] border-8 border-white md:h-[320px] md:border-[16px] lg:h-[375px] lg:border-[24px]"
             >
-              <img src="./assets/images/art02.jpg" alt="藍色啤酒海" class="h-full w-full object-cover object-center" />
+              <img
+                src="./assets/images/art02.jpg"
+                alt="藍色啤酒海"
+                class="h-full w-full object-cover object-center"
+              />
               <div
                 class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
               >
-                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <div
+                  class="absolute inset-4 flex flex-col p-4 ring-1 ring-white"
+                >
                   <h4 class="leading-normal text-white">
                     藍色，憂鬱，酒，哎呀... 暈了
                   </h4>
@@ -585,7 +659,11 @@ current: introduce
                     class="mt-2 inline-block font-squada leading-[17px] text-white"
                     ><i class="fa-brands fa-ethereum mr-2"></i>300</span
                   >
-                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                  <a
+                    href="./introduce.html"
+                    class="btn mt-auto self-end bg-white"
+                    >more</a
+                  >
                 </div>
               </div>
             </div>
@@ -603,19 +681,29 @@ current: introduce
         <li class="swiper-slide">
           <div class="group relative">
             <div
-              class="relative border-8 border-white md:border-[16px] lg:border-[24px] h-[220px] md:h-[320px] lg:h-[375px]"
+              class="relative h-[220px] border-8 border-white md:h-[320px] md:border-[16px] lg:h-[375px] lg:border-[24px]"
             >
-              <img src="./assets/images/art12.jpg" alt="不哭不哭眼淚是珍珠" class="h-full w-full object-cover object-center" />
+              <img
+                src="./assets/images/art12.jpg"
+                alt="不哭不哭眼淚是珍珠"
+                class="h-full w-full object-cover object-center"
+              />
               <div
                 class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
               >
-                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <div
+                  class="absolute inset-4 flex flex-col p-4 ring-1 ring-white"
+                >
                   <h4 class="leading-normal text-white">發家致富就在今天</h4>
                   <span
                     class="mt-2 inline-block font-squada leading-[17px] text-white"
                     ><i class="fa-brands fa-ethereum mr-2"></i>300</span
                   >
-                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                  <a
+                    href="./introduce.html"
+                    class="btn mt-auto self-end bg-white"
+                    >more</a
+                  >
                 </div>
               </div>
             </div>
@@ -633,19 +721,29 @@ current: introduce
         <li class="swiper-slide">
           <div class="group relative">
             <div
-              class="relative border-8 border-white md:border-[16px] lg:border-[24px] h-[220px] md:h-[320px] lg:h-[375px]"
+              class="relative h-[220px] border-8 border-white md:h-[320px] md:border-[16px] lg:h-[375px] lg:border-[24px]"
             >
-              <img src="./assets/images/art16.jpg" alt="柔美的細胞小將" class="h-full w-full object-cover object-center" />
+              <img
+                src="./assets/images/art16.jpg"
+                alt="柔美的細胞小將"
+                class="h-full w-full object-cover object-center"
+              />
               <div
                 class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
               >
-                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <div
+                  class="absolute inset-4 flex flex-col p-4 ring-1 ring-white"
+                >
                   <h4 class="leading-normal text-white">小雪人的平衡球挑戰</h4>
                   <span
                     class="mt-2 inline-block font-squada leading-[17px] text-white"
                     ><i class="fa-brands fa-ethereum mr-2"></i>300</span
                   >
-                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                  <a
+                    href="./introduce.html"
+                    class="btn mt-auto self-end bg-white"
+                    >more</a
+                  >
                 </div>
               </div>
             </div>
@@ -663,13 +761,19 @@ current: introduce
         <li class="swiper-slide">
           <div class="group relative">
             <div
-              class="relative border-8 border-white md:border-[16px] lg:border-[24px] h-[220px] md:h-[320px] lg:h-[375px]"
+              class="relative h-[220px] border-8 border-white md:h-[320px] md:border-[16px] lg:h-[375px] lg:border-[24px]"
             >
-              <img src="./assets/images/art03.jpg" alt="十分鐘就到" class="h-full w-full object-cover object-center" />
+              <img
+                src="./assets/images/art03.jpg"
+                alt="十分鐘就到"
+                class="h-full w-full object-cover object-center"
+              />
               <div
                 class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
               >
-                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <div
+                  class="absolute inset-4 flex flex-col p-4 ring-1 ring-white"
+                >
                   <h4 class="leading-normal text-white">
                     馬上就出門了，等我一下啊!!
                   </h4>
@@ -677,7 +781,11 @@ current: introduce
                     class="mt-2 inline-block font-squada leading-[17px] text-white"
                     ><i class="fa-brands fa-ethereum mr-2"></i>300</span
                   >
-                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                  <a
+                    href="./introduce.html"
+                    class="btn mt-auto self-end bg-white"
+                    >more</a
+                  >
                 </div>
               </div>
             </div>
@@ -695,13 +803,19 @@ current: introduce
         <li class="swiper-slide">
           <div class="group relative">
             <div
-              class="relative border-8 border-white md:border-[16px] lg:border-[24px] h-[220px] md:h-[320px] lg:h-[375px]"
+              class="relative h-[220px] border-8 border-white md:h-[320px] md:border-[16px] lg:h-[375px] lg:border-[24px]"
             >
-              <img src="./assets/images/art11.jpg" alt="沒有人愛我" class="h-full w-full object-cover object-right" />
+              <img
+                src="./assets/images/art11.jpg"
+                alt="沒有人愛我"
+                class="h-full w-full object-cover object-right"
+              />
               <div
                 class="absolute inset-0 hidden before:absolute before:inset-0 before:bg-black before:opacity-70 group-hover:opacity-100 lg:block lg:opacity-0 lg:duration-300"
               >
-                <div class="absolute inset-4 flex flex-col p-4 ring-1 ring-white">
+                <div
+                  class="absolute inset-4 flex flex-col p-4 ring-1 ring-white"
+                >
                   <h4 class="leading-normal text-white">
                     弱小、可憐又無助，而且沒有人愛我
                   </h4>
@@ -709,7 +823,11 @@ current: introduce
                     class="mt-2 inline-block font-squada leading-[17px] text-white"
                     ><i class="fa-brands fa-ethereum mr-2"></i>300</span
                   >
-                  <a href="./introduce.html" class="btn mt-auto self-end bg-white">more</a>
+                  <a
+                    href="./introduce.html"
+                    class="btn mt-auto self-end bg-white"
+                    >more</a
+                  >
                 </div>
               </div>
             </div>
@@ -722,6 +840,7 @@ current: introduce
                 >沒有人愛我</a
               >
             </h3>
+          </div>
         </li>
       </ul>
       <div class="swiper-pagination"></div>
