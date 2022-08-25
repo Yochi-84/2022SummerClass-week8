@@ -82,6 +82,7 @@ let indexSwiper = new Swiper(".indexSwiper", {
 });
 
 let introSwiper = new Swiper(".introSwiper", {
+  speed: 800,
   spaceBetween: 24,
   loop: true,
   loopFillGroupWithBlank: true,

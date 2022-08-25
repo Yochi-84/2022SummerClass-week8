@@ -21,7 +21,7 @@
   </head>
 
   <body>
-    <header class="fixed w-full top-0 z-30 border-b border-b-black bg-gray">
+    <header class="fixed top-0 z-30 w-full border-b border-b-black bg-gray">
       <nav class="container flex items-center gap-x-6 lg:gap-x-0">
         <!-- logo -->
         <div class="flex-grow py-4 lg:border-r lg:border-r-black lg:py-8">
@@ -61,7 +61,8 @@
         <!-- menu -->
         <ul
           class="absolute bottom-0 left-0 max-h-0 w-full translate-y-full overflow-hidden bg-white px-3 text-center transition-[max-height] duration-500 ease-linear lg:static lg:flex lg:max-h-full lg:w-auto lg:translate-y-0 lg:items-center lg:bg-transparent lg:px-0 lg:pb-0 lg:duration-[0s]"
-          id="menu" data-menu-status="close"
+          id="menu"
+          data-menu-status="close"
         >
           <li
             class="border-b border-b-black lg:border-b-0 lg:border-r lg:border-r-black"
@@ -108,7 +109,7 @@
       </nav>
     </header>
 
-    <main class="<%- current === 'index' ? 'pt-14' : 'pt-20' %>  lg:pt-[145px]">
+    <main class="<%- current === 'index' ? 'pt-14' : 'pt-20' %> lg:pt-[145px]">
       <%- contents %>
     </main>
 
@@ -121,7 +122,7 @@
     </footer>
     <!-- Wallet -->
     <div
-      class="fixed inset-0 z-50 bg-white md:inset-auto md:left-1/2 md:top-1/2 md:w-7/12 md:-translate-x-1/2 md:-translate-y-1/2  lg:w-5/12 md:bg-transparent md:px-3 hidden"
+      class="fixed inset-0 z-50 hidden bg-white md:inset-auto md:left-1/2 md:top-1/2 md:w-7/12 md:-translate-x-1/2 md:-translate-y-1/2 md:bg-transparent md:px-3 lg:w-5/12"
       id="wallet"
       data-status="show"
     >
@@ -134,51 +135,95 @@
             ><i class="fa-solid fa-x"></i
           ></span>
         </div>
-        <div class="h-[calc(100vh-114px)] overflow-auto md:h-auto px-3 md:px-4 py-6 md:text-center">
-          <ul class="md:-mx-1 flex flex-wrap gap-y-2">
+        <div
+          class="h-[calc(100vh-114px)] overflow-auto px-3 py-6 md:h-auto md:px-4 md:text-center"
+        >
+          <ul class="flex flex-wrap gap-y-2 md:-mx-1">
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="MetaMask">
-              <label for="MetaMask" class="relative p-4 font-squada border cursor-pointer border-black flex items-center leading-[17px] peer-checked:button-check">
-                <img src="./assets/images/logo/connect01.png" alt="MetaMask" class="mr-4 w-4 h-4">MetaMask
+              <input type="checkbox" class="peer hidden" id="MetaMask" />
+              <label
+                for="MetaMask"
+                class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
+              >
+                <img
+                  src="./assets/images/logo/connect01.png"
+                  alt="MetaMask"
+                  class="mr-4 h-4 w-4"
+                />MetaMask
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="Coinbase Wallet">
-              <label for="Coinbase Wallet" class="relative p-4 font-squada border cursor-pointer border-black flex items-center leading-[17px] peer-checked:button-check">
-                <img src="./assets/images/logo/connect02.png" alt="Coinbase Wallet" class="mr-4 w-4 h-4">Coinbase Wallet
+              <input type="checkbox" class="peer hidden" id="Coinbase Wallet" />
+              <label
+                for="Coinbase Wallet"
+                class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
+              >
+                <img
+                  src="./assets/images/logo/connect02.png"
+                  alt="Coinbase Wallet"
+                  class="mr-4 h-4 w-4"
+                />Coinbase Wallet
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="WalletConnect">
-              <label for="WalletConnect" class="relative p-4 font-squada border cursor-pointer border-black flex items-center leading-[17px] peer-checked:button-check">
-                <img src="./assets/images/logo/connect03.png" alt="WalletConnect" class="mr-4 w-4 h-4">WalletConnect
+              <input type="checkbox" class="peer hidden" id="WalletConnect" />
+              <label
+                for="WalletConnect"
+                class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
+              >
+                <img
+                  src="./assets/images/logo/connect03.png"
+                  alt="WalletConnect"
+                  class="mr-4 h-4 w-4"
+                />WalletConnect
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="Phantom">
-              <label for="Phantom" class="relative p-4 font-squada border cursor-pointer border-black flex items-center leading-[17px] peer-checked:button-check">
-                <img src="./assets/images/logo/connect04.png" alt="Phantom" class="mr-4 w-4 h-4">Phantom
+              <input type="checkbox" class="peer hidden" id="Phantom" />
+              <label
+                for="Phantom"
+                class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
+              >
+                <img
+                  src="./assets/images/logo/connect04.png"
+                  alt="Phantom"
+                  class="mr-4 h-4 w-4"
+                />Phantom
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="Glow">
-              <label for="Glow" class="relative p-4 font-squada border cursor-pointer border-black flex items-center leading-[17px] peer-checked:button-check">
-                <img src="./assets/images/logo/connect05.png" alt="Glow" class="mr-4 w-4 h-4">Glow
+              <input type="checkbox" class="peer hidden" id="Glow" />
+              <label
+                for="Glow"
+                class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
+              >
+                <img
+                  src="./assets/images/logo/connect05.png"
+                  alt="Glow"
+                  class="mr-4 h-4 w-4"
+                />Glow
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="Fortmatic">
-              <label for="Fortmatic" class="relative p-4 font-squada border cursor-pointer border-black flex items-center leading-[17px] peer-checked:button-check">
-                <img src="./assets/images/logo/connect06.png" alt="Fortmatic" class="mr-4 w-4 h-4">Fortmatic
+              <input type="checkbox" class="peer hidden" id="Fortmatic" />
+              <label
+                for="Fortmatic"
+                class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
+              >
+                <img
+                  src="./assets/images/logo/connect06.png"
+                  alt="Fortmatic"
+                  class="mr-4 h-4 w-4"
+                />Fortmatic
               </label>
             </li>
           </ul>
           <a
-          href="javascript:toggleWallet();"
-          class="fixed bottom-0 w-full left-0  inline-block border border-black bg-crimson py-3 text-center text-lg leading-[26px] text-white active:bg-black md:static md:w-auto md:mt-6 lg:hover:bg-black lg:duration-300 md:px-12"
-          id="connectWallet"
-          >連結錢包</a
-        >
+            href="javascript:toggleWallet();"
+            class="fixed bottom-0 left-0 inline-block w-full border border-black bg-crimson py-3 text-center text-lg leading-[26px] text-white active:bg-black md:static md:mt-6 md:w-auto md:px-12 lg:duration-300 lg:hover:bg-black"
+            id="connectWallet"
+            >連結錢包</a
+          >
         </div>
       </div>
     </div>

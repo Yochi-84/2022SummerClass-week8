@@ -4,6 +4,7 @@ module.exports = {
   content: ["./app/**/*.{html,ejs,js}", "./node_modules/tw-elements/dist/js/**/*.js"],
   theme: {
     screens: {
+      "sm": "576px",
       "md": "768px",
       "lg": "1026px",
       "xl": "1321px"
