@@ -5249,9 +5249,9 @@ textarea.form-control.is-invalid{
   bottom: 0px;
   left: 0px;
 }
-.before\:left-0::before{
+.before\:-left-px::before{
   content: var(--tw-content);
-  left: 0px;
+  left: -1px;
 }
 .before\:top-0::before{
   content: var(--tw-content);
@@ -5268,6 +5268,10 @@ textarea.form-control.is-invalid{
 .before\:right-0::before{
   content: var(--tw-content);
   right: 0px;
+}
+.before\:left-0::before{
+  content: var(--tw-content);
+  left: 0px;
 }
 .before\:right-\[5px\]::before{
   content: var(--tw-content);
@@ -5386,9 +5390,9 @@ textarea.form-control.is-invalid{
   bottom: 0px;
   left: 0px;
 }
-.after\:right-0::after{
+.after\:-right-px::after{
   content: var(--tw-content);
-  right: 0px;
+  right: -1px;
 }
 .after\:top-0::after{
   content: var(--tw-content);
@@ -5401,6 +5405,10 @@ textarea.form-control.is-invalid{
 .after\:top-\[22\.5px\]::after{
   content: var(--tw-content);
   top: 22.5px;
+}
+.after\:right-0::after{
+  content: var(--tw-content);
+  right: 0px;
 }
 .after\:top-12::after{
   content: var(--tw-content);
