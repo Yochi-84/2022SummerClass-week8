@@ -4140,26 +4140,9 @@ textarea.form-control.is-invalid{
     content: var(--tw-content);
     z-index: 2;
 }
-.nav-item .active{
-  position: relative;
-  border-width: 1px;
-  border-bottom-width: 0px;
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-.nav-item .active::after{
-  position: absolute;
-  bottom: -0.125rem;
-  left: 0px;
-  height: 0.125rem;
-  width: 100%;
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 240 240 / var(--tw-bg-opacity));
-  --tw-content: "";
-  content: var(--tw-content);
-}
+/* .nav-item .active {
+    @apply relative border border-b-0 border-black text-black after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:bg-gray after:content-[""];
+  } */
 .pointer-events-none{
   pointer-events: none;
 }
@@ -5086,24 +5069,15 @@ textarea.form-control.is-invalid{
         -ms-writing-mode: tb-lr;
             writing-mode: vertical-lr;
   }
-.nav-open{
-  max-height: 100vh;
-}
-.search-show{
-  max-width: 100%;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-.mask.show-mask{
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  opacity: 0.7;
-    -webkit-transition: opacity 0.5s;
-    -o-transition: opacity 0.5s;
-    transition: opacity 0.5s;
-}
+/* .nav-open {
+    @apply max-h-screen;
+  } */
+/* .search-show {
+    @apply max-w-full px-3;
+  } */
+/* .mask.show-mask {
+    @apply top-0 left-0 h-full w-full opacity-70;
+  } */
 
 .mask {
   -webkit-transition: opacity 1s, width 0s 0.5s, height 0s 0.5s, top 0s 0.5s,
@@ -5113,6 +5087,44 @@ textarea.form-control.is-invalid{
   transition: opacity 1s, width 0s 0.5s, height 0s 0.5s, top 0s 0.5s,
     left 0s 0.5s;
 }
+
+.mask.show-mask {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.search-show {
+  max-width: 100%;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.nav-open {
+  max-height: 100vh;
+}
+
+.nav-item .active {
+  position: relative;
+  border-bottom: 1px solid black;
+  color: black;
+}
+
+.nav-item .active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #F0F0F0;
+}
+
 
 /* Swiper */
 
