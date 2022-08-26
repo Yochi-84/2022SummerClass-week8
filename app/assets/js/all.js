@@ -171,9 +171,9 @@ if (url.pathname.endsWith('introduce.html')) {
   let observer = new MutationObserver(function (mutations) {
     mutations.forEach(function (mutation) {
       if (mutation.oldValue === "true") {
-        mutation.target.parentNode.classList.remove("border-b");
+        mutation.target.parentNode.classList.add("border-b-transparent");
       } else {
-        mutation.target.parentNode.classList.add("border-b");
+        mutation.target.parentNode.classList.remove("border-b-transparent");
       }
 
       // 收合後瀑布流重繪
