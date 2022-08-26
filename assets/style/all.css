@@ -404,6 +404,16 @@ body{
   line-height: 1;
 }
 
+input,
+  textarea,
+  button,
+  select,
+  a,
+  li,
+  label {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
 *, ::before, ::after{
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -4701,6 +4711,9 @@ textarea.form-control.is-invalid{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(240 240 240 / var(--tw-border-opacity));
 }
+.border-b-transparent{
+  border-bottom-color: transparent;
+}
 .border-t-transparent{
   border-top-color: transparent;
 }
@@ -5093,11 +5106,13 @@ textarea.form-control.is-invalid{
 }
 
 .mask {
-  -webkit-transition: opacity 1s, width 0s 0.5s, height 0s 0.5s,top 0s 0.5s,left 0s 0.5s;
-  -o-transition: opacity 1s, width 0s 0.5s, height 0s 0.5s,top 0s 0.5s,left 0s 0.5s;
-  transition: opacity 1s, width 0s 0.5s, height 0s 0.5s,top 0s 0.5s,left 0s 0.5s;
+  -webkit-transition: opacity 1s, width 0s 0.5s, height 0s 0.5s, top 0s 0.5s,
+    left 0s 0.5s;
+  -o-transition: opacity 1s, width 0s 0.5s, height 0s 0.5s, top 0s 0.5s,
+    left 0s 0.5s;
+  transition: opacity 1s, width 0s 0.5s, height 0s 0.5s, top 0s 0.5s,
+    left 0s 0.5s;
 }
-
 
 /* Swiper */
 
@@ -5192,7 +5207,7 @@ textarea.form-control.is-invalid{
   bottom: 0;
 }
 
-.swiper-pagination .swiper-pagination-bullet{
+.swiper-pagination .swiper-pagination-bullet {
   border-radius: 0;
   background: #000;
   opacity: 1;
@@ -5205,14 +5220,13 @@ textarea.form-control.is-invalid{
 }
 
 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: #E6553B;
+  background: #e6553b;
   width: 16px;
 }
 
-
 /* Ranking List */
 @media screen and (min-width: 1026px) {
-  li[data-role="list"] .collapse {
+  li[data-role='list'] .collapse {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5253,9 +5267,9 @@ textarea.form-control.is-invalid{
   content: var(--tw-content);
   left: -1px;
 }
-.before\:top-0::before{
+.before\:-top-px::before{
   content: var(--tw-content);
-  top: 0px;
+  top: -1px;
 }
 .before\:-top-2\.5::before{
   content: var(--tw-content);
@@ -5264,6 +5278,10 @@ textarea.form-control.is-invalid{
 .before\:-top-2::before{
   content: var(--tw-content);
   top: -0.5rem;
+}
+.before\:top-0::before{
+  content: var(--tw-content);
+  top: 0px;
 }
 .before\:right-0::before{
   content: var(--tw-content);
@@ -5394,9 +5412,9 @@ textarea.form-control.is-invalid{
   content: var(--tw-content);
   right: -1px;
 }
-.after\:top-0::after{
+.after\:-top-px::after{
   content: var(--tw-content);
-  top: 0px;
+  top: -1px;
 }
 .after\:right-\[-2px\]::after{
   content: var(--tw-content);
