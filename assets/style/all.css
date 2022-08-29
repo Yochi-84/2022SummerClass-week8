@@ -5111,7 +5111,8 @@ textarea.form-control.is-invalid{
 
 .nav-item .active {
   position: relative;
-  border-bottom: 1px solid black;
+  border: 1px solid black;
+  border-bottom-width: 0;
   color: black;
 }
 

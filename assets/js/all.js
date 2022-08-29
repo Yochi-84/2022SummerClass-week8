@@ -122,6 +122,10 @@ if (indexMasonry) {
     itemSelector: 'li',
     horizontalOrder: true
   });
+
+  imagesLoaded("#indexMasonry").on("progress", function () {
+    _iMasonry.layout();
+  });
 }
 
 ;
@@ -136,6 +140,9 @@ if (tabCollection) {
           itemSelector: 'li',
           horizontalOrder: true
         });
+        imagesLoaded("#collectionMasonry").on("progress", function () {
+          cMasonry.layout();
+        });
         clearInterval(loading);
       }
     }, 200);
@@ -149,6 +156,9 @@ if (artworkMasonry) {
   var aMasonry = new Masonry(artworkMasonry, {
     itemSelector: 'li',
     horizontalOrder: true
+  });
+  imagesLoaded("#artworkMasonry").on("progress", function () {
+    aMasonry.layout();
   });
 }
 
@@ -170,6 +180,9 @@ if (exploreMasonry) {
   var eMasonry = new Masonry(exploreMasonry, {
     itemSelector: 'li',
     horizontalOrder: true
+  });
+  imagesLoaded("#exploreMasonry").on("progress", function () {
+    eMasonry.layout();
   });
 }
 
