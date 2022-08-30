@@ -326,7 +326,7 @@ if (url.pathname.endsWith("ranking.html")) {
     >
       <div class="basis-[38px] font-paytone">${index + 1}</div>
       <div
-        class="flex flex-grow-[2] items-center gap-x-2 border-l border-l-black py-4 pl-2 font-sans lg:gap-x-4 lg:pl-4 lg:basis-1/5"
+        class="flex flex-grow-[2] items-center basis-1/2 gap-x-2 border-l border-l-black py-4 pl-2 font-sans lg:gap-x-4 lg:pl-4 lg:basis-1/5"
       >
         <img
           src="./assets/images/art${item.image}"
@@ -334,16 +334,16 @@ if (url.pathname.endsWith("ranking.html")) {
           class="h-12 w-12 rounded-full object-cover object-top"
         />
         <span
-          class="block max-w-[140px] overflow-hidden text-ellipsis whitespace-nowrap text-sm font-bold leading-5 sm:max-w-max md:text-base md:leading-normal"
+          class="block max-w-[140px] overflow-hidden text-ellipsis whitespace-nowrap text-sm font-bold leading-5 md:text-base md:leading-normal"
           >${item.name}</span
         >
       </div>
-      <div class="py-4 pr-4 text-right lg:pr-0 flex-grow">
+      <div class="py-4 pr-4 text-right lg:pr-0 flex-grow basis-1/3 lg:basis-auto">
         <!-- 隱藏 checkbox + label 偽元素判定收合  -->
         <input type="checkbox" class="peer hidden" id="list${index + 1}" />
         <label
           for="list${index + 1}"
-          class="text-white before:z-1 before:absolute before:top-0 before:right-0 before:left-0 before:h-20 before:border-b-0 before:border-black before:duration-300 before:content-[''] after:absolute after:right-0 after:top-12 after:border-b-[32px] after:border-l-[32px] after:border-b-black after:border-l-transparent after:duration-300 after:content-[''] peer-checked:before:border-b peer-checked:after:border-b-crimson peer-checked:text-crimson lg:hidden"
+          class="text-white before:z-1 before:absolute before:-top-px before:right-0 before:left-0 before:h-[82px] before:border-b before:border-transparent before:duration-300 before:content-[''] after:absolute after:right-0 after:top-12 after:border-b-[32px] after:border-l-[32px] after:border-b-black after:border-l-transparent after:duration-300 after:content-[''] peer-checked:before:border-b-black peer-checked:after:border-b-crimson peer-checked:text-crimson lg:hidden"
           data-bs-toggle="collapse"
           data-bs-target="#collapse${index + 1}"
           aria-expanded="false"
@@ -360,7 +360,7 @@ if (url.pathname.endsWith("ranking.html")) {
       </div>
       <!-- 要保持只有一個開啟 加上data-bs-parent="#rankingList" -->
       <div
-        class="collapse flex w-full flex-wrap items-center justify-around gap-y-4 p-4 lg:w-auto lg:p-0 basis-3/5 flex-grow lg:flex-grow-0"
+        class="collapse flex w-full flex-wrap items-center justify-around basis-3/5 flex-grow gap-y-4 p-4 lg:w-auto lg:p-0 lg:flex-grow-0"
         aria-labelledby="heading${index + 1}"
         id="collapse${index + 1}"
       >
