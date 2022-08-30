@@ -70,6 +70,10 @@ if (document.querySelector('#filterSubmit')) {
 let indexSwiper = new Swiper(".indexSwiper", {
   speed: 800,
   loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
   grabCursor: true,
   centeredSlides: true,
   breakpoints: {
@@ -92,6 +96,10 @@ let introSwiper = new Swiper(".introSwiper", {
   speed: 800,
   spaceBetween: 24,
   loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
   loopFillGroupWithBlank: true,
   breakpoints: {
     320: {
