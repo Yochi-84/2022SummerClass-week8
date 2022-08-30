@@ -343,7 +343,7 @@ if (url.pathname.endsWith("ranking.html")) {
         <input type="checkbox" class="peer hidden" id="list${index + 1}" />
         <label
           for="list${index + 1}"
-          class="text-white before:z-1 before:absolute before:-top-px before:right-0 before:left-0 before:h-[82px] before:border-b before:border-transparent before:duration-300 before:content-[''] after:absolute after:right-0 after:top-12 after:border-b-[32px] after:border-l-[32px] after:border-b-black after:border-l-transparent after:duration-300 after:content-[''] peer-checked:before:border-b-black peer-checked:after:border-b-crimson peer-checked:text-crimson lg:hidden"
+          class="text-white before:z-1 before:absolute before:-top-px before:right-0 before:left-0 before:h-[81px] before:border-b before:border-transparent before:duration-300  after:absolute after:right-0 after:top-12 after:border-b-[32px] after:border-l-[32px] after:border-b-black after:border-l-transparent after:duration-300 peer-checked:before:border-b-black peer-checked:after:border-b-crimson peer-checked:text-crimson lg:hidden"
           data-bs-toggle="collapse"
           data-bs-target="#collapse${index + 1}"
           aria-expanded="false"
@@ -351,7 +351,7 @@ if (url.pathname.endsWith("ranking.html")) {
         >
         <!-- 加號豎線 currentColor 搭配 label 顏色調整控制隱藏 -->
           <span
-            class="before:absolute before:right-[5px] before:top-[70px] before:h-0.5 before:w-2.5 before:bg-white before:content-[''] after:absolute after:top-[66px] after:right-[9px] after:h-2.5 after:w-0.5 after:bg-current after:duration-300 after:content-[''] before:z-10 after:z-2"
+            class="before:absolute before:right-[5px] before:top-[70px] before:h-0.5 before:w-2.5 before:bg-white after:absolute after:top-[66px] after:right-[9px] after:h-2.5 after:w-0.5 after:bg-current after:duration-300 before:z-10 after:z-2"
           ></span>
         </label>
         <span
