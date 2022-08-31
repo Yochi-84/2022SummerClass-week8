@@ -4201,6 +4201,12 @@ textarea.form-control.is-invalid{
 .right-0{
   right: 0px;
 }
+.right-px{
+  right: 1px;
+}
+.bottom-px{
+  bottom: 1px;
+}
 .top-6{
   top: 1.5rem;
 }
@@ -4231,11 +4237,11 @@ textarea.form-control.is-invalid{
 .z-10{
   z-index: 10;
 }
-.z-30{
-  z-index: 30;
-}
 .z-20{
   z-index: 20;
+}
+.z-30{
+  z-index: 30;
 }
 .z-40{
   z-index: 40;
@@ -5620,6 +5626,9 @@ textarea.form-control.is-invalid{
   border-left-color: transparent;
     content: var(--tw-content);
     z-index: 2;
+}
+.group:hover .group-hover\:inline-block{
+  display: inline-block;
 }
 .group:hover .group-hover\:opacity-100{
   opacity: 1;
