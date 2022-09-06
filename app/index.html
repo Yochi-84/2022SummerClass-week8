@@ -19,7 +19,7 @@ current: index
   <div
     class="flex flex-wrap ring-1 ring-black md:flex-row lg:w-[calc(100%-100px)]"
   >
-    <div class="md:w-1/2 lg:w-[64%]">
+    <div class="md:w-1/2 lg:w-[63%]">
       <img
         src="./assets/images/art01.jpg"
         alt="瞳孔:流動的脈絡"
@@ -27,7 +27,7 @@ current: index
       />
     </div>
     <div
-      class="flex w-full flex-col bg-white px-3 py-8 md:w-1/2 lg:w-[36%] lg:px-6 lg:pt-[80px] lg:pb-6"
+      class="flex w-full flex-col bg-white px-3 py-8 md:w-1/2 lg:w-[37%] lg:px-6 lg:pt-20 lg:pb-6"
     >
       <small class="font-squada text-lg leading-[19px]">Kemus Wu</small>
       <h3
@@ -91,17 +91,17 @@ current: index
 
 <!-- Ranking -->
 <section class="container mt-10 lg:mt-20">
-  <h2
-    class="relative border-b border-b-black pb-2 font-squada text-3xl leading-[34px] lg:pb-4 lg:text-4xl lg:leading-[50px]"
-  >
-    Ranking<span
-      class="ml-4 hidden font-sans text-xl font-bold leading-[29px] lg:inline"
-      >市價排行榜</span
+  <div class="flex items-end justify-between border-b border-b-black">
+    <h2
+      class="relative pb-2 font-squada text-3xl leading-[34px] lg:pb-4 lg:text-4xl lg:leading-[50px]"
     >
-    <a href="./ranking.html" class="btn absolute right-0 bottom-0 ring-0"
-      >more</a
-    >
-  </h2>
+      Ranking<span
+        class="ml-4 hidden font-sans text-xl font-bold leading-[29px] lg:inline"
+        >市價排行榜</span
+      >
+    </h2>
+    <a href="./ranking.html" class="btn ring-transparent">more</a>
+  </div>
   <ul
     class="mt-6 block w-full space-y-6 md:-mx-3 md:mt-12 md:flex md:w-auto md:flex-wrap md:gap-y-8 md:space-y-0 lg:space-y-0"
   >
@@ -277,7 +277,9 @@ current: index
       </div>
     </li>
     <li class="w-full md:w-1/2 md:px-3 lg:w-1/3">
-      <div class="group relative flex h-[90px] w-full bg-white ring-1 ring-black">
+      <div
+        class="group relative flex h-[90px] w-full bg-white ring-1 ring-black"
+      >
         <span
           class="mx-2 flex w-[22px] items-center justify-center bg-white font-paytone text-2xl"
           >5</span
@@ -310,7 +312,9 @@ current: index
       </div>
     </li>
     <li class="w-full md:w-1/2 md:px-3 lg:w-1/3">
-      <div class="group relative flex h-[90px] w-full bg-white ring-1 ring-black">
+      <div
+        class="group relative flex h-[90px] w-full bg-white ring-1 ring-black"
+      >
         <span
           class="mx-2 flex w-[22px] items-center justify-center bg-white font-paytone text-2xl"
           >6</span
@@ -347,17 +351,17 @@ current: index
 
 <!-- Artist -->
 <section class="container mt-10 lg:mt-20">
-  <h2
-    class="relative border-b border-b-black pb-2 font-squada text-3xl leading-[34px] lg:pb-4 lg:text-4xl lg:leading-[50px]"
-  >
-    Artist<span
-      class="ml-4 hidden font-sans text-xl font-bold leading-[29px] lg:inline"
-      >熱門藝術家</span
+  <div class="flex items-end justify-between border-b border-b-black">
+    <h2
+      class="relative pb-2 font-squada text-3xl leading-[34px] lg:pb-4 lg:text-4xl lg:leading-[50px]"
     >
-    <a href="./artist.html" class="btn absolute right-0 bottom-0 ring-0"
-      >more</a
-    >
-  </h2>
+      Artist<span
+        class="ml-4 hidden font-sans text-xl font-bold leading-[29px] lg:inline"
+        >熱門藝術家</span
+      >
+    </h2>
+    <a href="./artist.html" class="btn ring-transparent">more</a>
+  </div>
   <!-- TODO: carousel -->
   <div class="swiper indexSwiper mt-6 pb-[34px] md:mt-12 lg:pb-[58px]">
     <ul class="swiper-wrapper lg:-mx-3">
@@ -434,18 +438,17 @@ current: index
 
 <!-- Artwork -->
 <section class="container mt-10 lg:mt-20">
-  <h2
-    class="relative border-b border-b-black pb-2 font-squada text-3xl leading-[34px] lg:pb-4 lg:text-4xl lg:leading-[50px]"
-  >
-    Artwork<span
-      class="ml-4 hidden font-sans text-xl font-bold leading-[29px] lg:inline"
-      >最新藝術品</span
+  <div class="flex items-end justify-between border-b border-b-black">
+    <h2
+      class="relative pb-2 font-squada text-3xl leading-[34px] lg:pb-4 lg:text-4xl lg:leading-[50px]"
     >
-    <a href="./artworks.html" class="btn absolute right-0 bottom-0 ring-0"
-      >more</a
-    >
-  </h2>
-
+      Artwork<span
+        class="ml-4 hidden font-sans text-xl font-bold leading-[29px] lg:inline"
+        >最新藝術品</span
+      >
+    </h2>
+    <a href="./artworks.html" class="btn ring-transparent">more</a>
+  </div>
   <ul class="-mx-3 mt-6 grid md:mt-12" id="indexMasonry">
     <li class="mb-12 w-1/2 px-3 md:w-1/3 xl:w-1/4">
       <div class="group relative">
