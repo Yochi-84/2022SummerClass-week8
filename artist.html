@@ -60,7 +60,7 @@
         </div>
         <!-- menu -->
         <ul
-          class="absolute bottom-0 left-0 max-h-0 w-full translate-y-full overflow-hidden bg-white px-3 text-center transition-[max-height] duration-500 ease-linear lg:static lg:flex lg:max-h-full lg:w-auto lg:translate-y-0 lg:items-center lg:bg-transparent lg:px-0 lg:pb-0 lg:duration-[0s]"
+          class="absolute -bottom-px left-0 max-h-0 w-full translate-y-full overflow-hidden bg-white px-3 text-center transition-[max-height] duration-500 ease-linear lg:static lg:flex lg:max-h-full lg:w-auto lg:translate-y-0 lg:items-center lg:bg-transparent lg:px-0 lg:pb-0 lg:duration-[0s]"
           id="menu"
           data-menu-status="close"
         >
@@ -69,7 +69,7 @@
           >
             <a
               href="./explore.html"
-              class="block h-full py-6 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
+              class="block h-full py-3 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
               >探索</a
             >
           </li>
@@ -78,19 +78,19 @@
           >
             <a
               href="./ranking.html"
-              class="block h-full py-6 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
+              class="block h-full py-3 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
               >市值</a
             >
           </li>
           <li class="mb-6 lg:mb-0">
             <a
               href="javascript:toggleWallet();"
-              class="hidden h-full py-6 duration-300 lg:block lg:py-10 lg:pl-12 lg:hover:text-crimson"
+              class="hidden h-full py-3 duration-300 lg:block lg:py-10 lg:pl-12 lg:hover:text-crimson"
               ><i class="fa-solid fa-wallet"></i
             ></a>
             <a
               href="javascript:toggleWallet();"
-              class="block h-full py-6 text-lg font-bold leading-normal active:bg-crimson active:text-white active:ring-1 active:ring-black lg:hidden"
+              class="block h-full py-3 text-lg font-bold leading-normal active:bg-crimson active:text-white active:ring-1 active:ring-black lg:hidden"
               >連結錢包</a
             >
           </li>
@@ -174,17 +174,17 @@
           class="flex items-center justify-between border-b border-black py-4 px-6"
         >
           <span class="font-bold leading-loose">地板價格</span>
-          <span class="font-squada text-3xl">0.6 ETH</span>
+          <span class="font-squada text-3xl">0.6 <small class="text-2xl leading-normal">ETH</small></span>
         </li>
         <li
           class="flex items-center justify-between border-b border-black py-4 px-6"
         >
           <span class="font-bold leading-loose">7 日成交</span>
-          <span class="font-squada text-3xl">8.8 ETH</span>
+          <span class="font-squada text-3xl">8.8 <small class="text-2xl leading-normal">ETH</small></span>
         </li>
         <li class="flex items-center justify-between py-4 px-6">
           <span class="font-bold leading-loose">30 日成交</span>
-          <span class="font-squada text-3xl">23.1 ETH</span>
+          <span class="font-squada text-3xl">23.1 <small class="text-2xl leading-normal">ETH</small></span>
         </li>
       </ul>
     </div>
@@ -260,22 +260,22 @@
                   <ul class="md:-mx-1 md:flex">
                     <li class="md:w-1/4 md:px-1">
                       <div
-                        class="border-[10px] border-black bg-[url('../images/art32.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                        class="border-[10px] border-black bg-[url('../images/art32.jpg')] bg-cover bg-center bg-no-repeat pt-full"
                       ></div>
                     </li>
                     <li class="hidden md:block md:w-1/4 md:px-1">
                       <div
-                        class="border-[10px] border-black bg-[url('../images/art30.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                        class="border-[10px] border-black bg-[url('../images/art30.jpg')] bg-cover bg-center bg-no-repeat pt-full"
                       ></div>
                     </li>
                     <li class="hidden md:block md:w-1/4 md:px-1">
                       <div
-                        class="border-[10px] border-black bg-[url('../images/art14.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                        class="border-[10px] border-black bg-[url('../images/art14.jpg')] bg-cover bg-center bg-no-repeat pt-full"
                       ></div>
                     </li>
                     <li class="hidden md:block md:w-1/4 md:px-1">
                       <div
-                        class="border-[10px] border-black bg-[url('../images/art13.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                        class="border-[10px] border-black bg-[url('../images/art13.jpg')] bg-cover bg-center bg-no-repeat pt-full"
                       ></div>
                     </li>
                   </ul>
@@ -307,22 +307,22 @@
                   <ul class="md:-mx-1 md:flex">
                     <li class="md:w-1/4 md:px-1">
                       <div
-                        class="border-[10px] border-black bg-[url('../images/art27.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                        class="border-[10px] border-black bg-[url('../images/art27.jpg')] bg-cover bg-center bg-no-repeat pt-full"
                       ></div>
                     </li>
                     <li class="hidden md:block md:w-1/4 md:px-1">
                       <div
-                        class="border-[10px] border-black bg-[url('../images/art20.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                        class="border-[10px] border-black bg-[url('../images/art20.jpg')] bg-cover bg-center bg-no-repeat pt-full"
                       ></div>
                     </li>
                     <li class="hidden md:block md:w-1/4 md:px-1">
                       <div
-                        class="border-[10px] border-black bg-[url('../images/art26.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                        class="border-[10px] border-black bg-[url('../images/art26.jpg')] bg-cover bg-center bg-no-repeat pt-full"
                       ></div>
                     </li>
                     <li class="hidden md:block md:w-1/4 md:px-1">
                       <div
-                        class="border-[10px] border-black bg-[url('../images/art22.jpg')] bg-cover bg-center bg-no-repeat pt-[100%]"
+                        class="border-[10px] border-black bg-[url('../images/art22.jpg')] bg-cover bg-center bg-no-repeat pt-full"
                       ></div>
                     </li>
                   </ul>
@@ -678,7 +678,7 @@
         >
           <ul class="flex flex-wrap gap-y-2 md:-mx-1">
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="MetaMask" />
+              <input type="radio" class="peer hidden" id="MetaMask" name="wallet" />
               <label
                 for="MetaMask"
                 class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
@@ -691,7 +691,7 @@
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="Coinbase Wallet" />
+              <input type="radio" class="peer hidden" id="Coinbase Wallet"  name="wallet"/>
               <label
                 for="Coinbase Wallet"
                 class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
@@ -704,7 +704,7 @@
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="WalletConnect" />
+              <input type="radio" class="peer hidden" id="WalletConnect"  name="wallet"/>
               <label
                 for="WalletConnect"
                 class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
@@ -717,7 +717,7 @@
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="Phantom" />
+              <input type="radio" class="peer hidden" id="Phantom"  name="wallet"/>
               <label
                 for="Phantom"
                 class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
@@ -730,7 +730,7 @@
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="Glow" />
+              <input type="radio" class="peer hidden" id="Glow"  name="wallet"/>
               <label
                 for="Glow"
                 class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
@@ -743,7 +743,7 @@
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="Fortmatic" />
+              <input type="radio" class="peer hidden" id="Fortmatic"  name="wallet"/>
               <label
                 for="Fortmatic"
                 class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"

@@ -4085,6 +4085,8 @@ textarea.form-control.is-invalid{
   background-color: rgb(230 85 59 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
 }
 .btn:hover::after{
   content: var(--tw-content);
@@ -4218,6 +4220,9 @@ textarea.form-control.is-invalid{
 }
 .right-1\/2{
   right: 50%;
+}
+.-bottom-px{
+  bottom: -1px;
 }
 .left-0{
   left: 0px;
@@ -4599,6 +4604,15 @@ textarea.form-control.is-invalid{
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
+.divide-y > :not([hidden]) ~ :not([hidden]){
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+.divide-gray-dark > :not([hidden]) ~ :not([hidden]){
+  --tw-divide-opacity: 1;
+  border-color: rgb(128 128 128 / var(--tw-divide-opacity));
+}
 .self-end{
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -4676,10 +4690,6 @@ textarea.form-control.is-invalid{
 .border-b-black{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-.border-b-gray-dark{
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(128 128 128 / var(--tw-border-opacity));
 }
 .border-r-black{
   --tw-border-opacity: 1;
@@ -4833,9 +4843,6 @@ textarea.form-control.is-invalid{
 .pl-0{
   padding-left: 0px;
 }
-.pt-\[100\%\]{
-  padding-top: 100%;
-}
 .pt-4{
   padding-top: 1rem;
 }
@@ -4908,11 +4915,11 @@ textarea.form-control.is-invalid{
 .text-3xl{
   font-size: 2rem;
 }
-.text-xl{
-  font-size: 1.25rem;
-}
 .text-2xl{
   font-size: 1.5rem;
+}
+.text-xl{
+  font-size: 1.25rem;
 }
 .text-sm{
   font-size: 0.75rem;
@@ -5002,12 +5009,6 @@ textarea.form-control.is-invalid{
   -webkit-box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
           box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
-.ring-0{
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  -webkit-box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-          box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
 .ring-white{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
@@ -5015,6 +5016,9 @@ textarea.form-control.is-invalid{
 .ring-black{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
+}
+.ring-transparent{
+  --tw-ring-color: transparent;
 }
 .blur{
   --tw-blur: blur(8px);
@@ -5073,6 +5077,9 @@ textarea.form-control.is-invalid{
     -webkit-writing-mode: vertical-lr;
         -ms-writing-mode: tb-lr;
             writing-mode: vertical-lr;
+  }
+.pt-full {
+    padding-top: 100%;
   }
 /* .nav-open {
     @apply max-h-screen;
@@ -6289,12 +6296,12 @@ textarea.form-control.is-invalid{
     width: calc(100% - 100px);
   }
 
-  .lg\:w-\[64\%\]{
-    width: 64%;
+  .lg\:w-\[63\%\]{
+    width: 63%;
   }
 
-  .lg\:w-\[36\%\]{
-    width: 36%;
+  .lg\:w-\[37\%\]{
+    width: 37%;
   }
 
   .lg\:w-1\/2{
@@ -6498,8 +6505,8 @@ textarea.form-control.is-invalid{
     padding-left: 1.5rem;
   }
 
-  .lg\:pt-\[80px\]{
-    padding-top: 80px;
+  .lg\:pt-20{
+    padding-top: 5rem;
   }
 
   .lg\:pt-12{

@@ -60,7 +60,7 @@
         </div>
         <!-- menu -->
         <ul
-          class="absolute bottom-0 left-0 max-h-0 w-full translate-y-full overflow-hidden bg-white px-3 text-center transition-[max-height] duration-500 ease-linear lg:static lg:flex lg:max-h-full lg:w-auto lg:translate-y-0 lg:items-center lg:bg-transparent lg:px-0 lg:pb-0 lg:duration-[0s]"
+          class="absolute -bottom-px left-0 max-h-0 w-full translate-y-full overflow-hidden bg-white px-3 text-center transition-[max-height] duration-500 ease-linear lg:static lg:flex lg:max-h-full lg:w-auto lg:translate-y-0 lg:items-center lg:bg-transparent lg:px-0 lg:pb-0 lg:duration-[0s]"
           id="menu"
           data-menu-status="close"
         >
@@ -69,7 +69,7 @@
           >
             <a
               href="./explore.html"
-              class="block h-full py-6 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
+              class="block h-full py-3 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
               >探索</a
             >
           </li>
@@ -78,19 +78,19 @@
           >
             <a
               href="./ranking.html"
-              class="block h-full py-6 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
+              class="block h-full py-3 text-lg font-bold leading-[26px] duration-300 active:bg-crimson active:text-white active:ring-1 active:ring-black lg:py-10 lg:px-12 lg:text-base lg:leading-normal lg:hover:text-crimson lg:active:bg-transparent lg:active:ring-0"
               >市值</a
             >
           </li>
           <li class="mb-6 lg:mb-0">
             <a
               href="javascript:toggleWallet();"
-              class="hidden h-full py-6 duration-300 lg:block lg:py-10 lg:pl-12 lg:hover:text-crimson"
+              class="hidden h-full py-3 duration-300 lg:block lg:py-10 lg:pl-12 lg:hover:text-crimson"
               ><i class="fa-solid fa-wallet"></i
             ></a>
             <a
               href="javascript:toggleWallet();"
-              class="block h-full py-6 text-lg font-bold leading-normal active:bg-crimson active:text-white active:ring-1 active:ring-black lg:hidden"
+              class="block h-full py-3 text-lg font-bold leading-normal active:bg-crimson active:text-white active:ring-1 active:ring-black lg:hidden"
               >連結錢包</a
             >
           </li>
@@ -456,17 +456,19 @@
 </section>
 
 <section class="container mt-10">
-  <h2
-    class="relative border-b border-b-black pb-2 font-squada text-3xl leading-[34px] lg:pb-4 lg:text-4xl lg:leading-[50px]"
-  >
-    Other<span
-      class="ml-4 hidden font-sans text-xl font-bold leading-[29px] lg:inline"
-      >其餘作品</span
+  <div class="flex justify-between items-end border-b border-b-black">
+    <h2
+      class="relative pb-2 font-squada text-3xl leading-[34px] lg:pb-4 lg:text-4xl lg:leading-[50px]"
     >
-    <a href="./artworks.html" class="btn absolute right-0 bottom-0 ring-0"
-      >more</a
-    >
-  </h2>
+      Other<span
+        class="ml-4 hidden font-sans text-xl font-bold leading-[29px] lg:inline"
+        >其餘作品</span
+      >
+    </h2>
+    <a href="./artworks.html" class="btn ring-transparent"
+        >more</a
+      >
+  </div>
   <div class="mt-6 mb-10 md:mt-12 md:mb-20">
     <div class="swiper introSwiper pb-[34px] md:pb-[58px]">
       <ul class="swiper-wrapper">
@@ -995,7 +997,7 @@
         >
           <ul class="flex flex-wrap gap-y-2 md:-mx-1">
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="MetaMask" />
+              <input type="radio" class="peer hidden" id="MetaMask" name="wallet" />
               <label
                 for="MetaMask"
                 class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
@@ -1008,7 +1010,7 @@
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="Coinbase Wallet" />
+              <input type="radio" class="peer hidden" id="Coinbase Wallet"  name="wallet"/>
               <label
                 for="Coinbase Wallet"
                 class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
@@ -1021,7 +1023,7 @@
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="WalletConnect" />
+              <input type="radio" class="peer hidden" id="WalletConnect"  name="wallet"/>
               <label
                 for="WalletConnect"
                 class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
@@ -1034,7 +1036,7 @@
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="Phantom" />
+              <input type="radio" class="peer hidden" id="Phantom"  name="wallet"/>
               <label
                 for="Phantom"
                 class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
@@ -1047,7 +1049,7 @@
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="Glow" />
+              <input type="radio" class="peer hidden" id="Glow"  name="wallet"/>
               <label
                 for="Glow"
                 class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
@@ -1060,7 +1062,7 @@
               </label>
             </li>
             <li class="w-full md:w-1/2 md:px-1">
-              <input type="checkbox" class="peer hidden" id="Fortmatic" />
+              <input type="radio" class="peer hidden" id="Fortmatic"  name="wallet"/>
               <label
                 for="Fortmatic"
                 class="peer-checked:button-check relative flex cursor-pointer items-center border border-black p-4 font-squada leading-[17px]"
